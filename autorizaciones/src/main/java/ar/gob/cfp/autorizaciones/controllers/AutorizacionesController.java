@@ -39,7 +39,7 @@ public class AutorizacionesController {
 			if (infoSesion!=null) {
 				return new ResponseEntity<Object>(infoSesion, HttpStatus.OK);
 			} else {
-				return new ResponseEntity<Object>("Token no valido", HttpStatus.UNAUTHORIZED);
+				return new ResponseEntity<Object>("Token no valido para acceso", HttpStatus.UNAUTHORIZED);
 			}
 			
 		} catch (Exception e) {
