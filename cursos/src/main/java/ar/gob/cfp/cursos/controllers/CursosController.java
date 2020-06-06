@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import ar.gob.cfp.commons.model.Curso;
 import ar.gob.cfp.cursos.exceptions.InstitucionInexistenteException;
-import ar.gob.cfp.cursos.modelo.Curso;
 import ar.gob.cfp.cursos.services.CursosService;
 
 @RestController

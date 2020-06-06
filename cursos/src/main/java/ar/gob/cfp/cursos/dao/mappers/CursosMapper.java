@@ -1,7 +1,7 @@
 package ar.gob.cfp.cursos.dao.mappers;
 
+import ar.gob.cfp.commons.model.Curso;
 import ar.gob.cfp.cursos.dao.entities.CursoEntity;
-import ar.gob.cfp.cursos.modelo.Curso;
 
 public class CursosMapper {
 
