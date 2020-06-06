@@ -27,7 +27,7 @@ public class CursosController {
 			Curso respuesta = cursosService.guardarCurso(curso);
 			return new ResponseEntity<Object>(respuesta, HttpStatus.CREATED);
 		} catch (InstitucionInexistenteException e) {
-			return new ResponseEntity<Object>("No existe institucion indicada", HttpStatus.BAD_REQUEST);
+			return new ResponseEntity<Object>("No existe Institucion indicada", HttpStatus.BAD_REQUEST);
 		}
 		
 	}
