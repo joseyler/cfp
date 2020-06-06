@@ -6,9 +6,9 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import ar.gob.cfp.commons.model.Profesor;
 import ar.gob.cfp.personal.dao.entities.ProfesorEntity;
 import ar.gob.cfp.personal.dao.mappers.ProfesorMapper;
-import ar.gob.cfp.personal.modelo.Profesor;
 
 @Service
 public class ProfesorDao  {
