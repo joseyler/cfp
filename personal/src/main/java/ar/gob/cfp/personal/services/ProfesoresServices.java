@@ -4,8 +4,8 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import ar.gob.cfp.commons.model.Profesor;
 import ar.gob.cfp.personal.dao.ProfesorDao;
-import ar.gob.cfp.personal.modelo.Profesor;
 
 @Service
 public class ProfesoresServices {

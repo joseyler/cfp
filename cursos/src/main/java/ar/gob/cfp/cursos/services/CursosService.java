@@ -2,14 +2,13 @@ package ar.gob.cfp.cursos.services;
 
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import ar.gob.cfp.commons.model.Curso;
+import ar.gob.cfp.commons.model.Institucion;
 import ar.gob.cfp.cursos.dao.CursosDao;
 import ar.gob.cfp.cursos.exceptions.InstitucionInexistenteException;
-import ar.gob.cfp.cursos.modelo.Curso;
-import ar.gob.cfp.cursos.modelo.Institucion;
 
 @Service
 public class CursosService {
