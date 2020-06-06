@@ -28,7 +28,7 @@ public class AutorizacionesController {
 			ValidacionToken respuesta = authService.validarSesion(datos);
 			return new ResponseEntity<Object>(respuesta, HttpStatus.OK);
 		} catch (Exception e) {
-			return new ResponseEntity<Object>("Error en validacion", HttpStatus.UNAUTHORIZED);
+			return new ResponseEntity<Object>("Validacion error", HttpStatus.UNAUTHORIZED);
 		}
 	}
 	
