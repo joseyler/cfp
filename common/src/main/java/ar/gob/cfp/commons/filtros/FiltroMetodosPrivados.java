@@ -1,4 +1,4 @@
-package ar.gob.cfp.personal;
+package ar.gob.cfp.commons.filtros;
 
 import java.io.IOException;
 
@@ -10,7 +10,7 @@ import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import ar.gob.cfp.personal.services.AutorizacionesService;
+import ar.gob.cfp.commons.services.AutorizacionesService;
 
 //Fuera del contexto de spring, no esta anotada
 public class FiltroMetodosPrivados implements Filter {
