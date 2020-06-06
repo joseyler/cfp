@@ -1,4 +1,4 @@
-package ar.gob.cfp.personal.modelo;
+package ar.gob.cfp.commons.model;
 
 import java.util.Date;
 

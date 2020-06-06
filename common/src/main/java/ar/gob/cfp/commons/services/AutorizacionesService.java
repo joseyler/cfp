@@ -1,4 +1,4 @@
-package ar.gob.cfp.personal.services;
+package ar.gob.cfp.commons.services;
 
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
@@ -7,7 +7,7 @@ import org.springframework.web.client.HttpStatusCodeException;
 import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 
-import ar.gob.cfp.personal.modelo.AutorizacionModelo;
+import ar.gob.cfp.commons.model.AutorizacionModelo;
 
 @Service
 public class AutorizacionesService {
