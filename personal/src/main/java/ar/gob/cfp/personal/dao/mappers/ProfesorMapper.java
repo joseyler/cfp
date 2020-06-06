@@ -3,8 +3,8 @@ package ar.gob.cfp.personal.dao.mappers;
 import java.util.ArrayList;
 import java.util.List;
 
+import ar.gob.cfp.commons.model.Profesor;
 import ar.gob.cfp.personal.dao.entities.ProfesorEntity;
-import ar.gob.cfp.personal.modelo.Profesor;
 
 public class ProfesorMapper {
 	

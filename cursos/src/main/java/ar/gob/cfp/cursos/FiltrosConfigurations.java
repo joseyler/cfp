@@ -1,4 +1,4 @@
-package ar.gob.cfp.personal;
+package ar.gob.cfp.cursos;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
@@ -18,8 +18,7 @@ public class FiltrosConfigurations {
 	public FilterRegistrationBean<FiltroMetodosPrivados> filtroMetodosPrivados() {
 		FilterRegistrationBean<FiltroMetodosPrivados> filtroReg = new FilterRegistrationBean<FiltroMetodosPrivados>();
 		filtroReg.setFilter(new FiltroMetodosPrivados(authServices));
-		filtroReg.addUrlPatterns("/v1/profesores/*","/otraUrl");
-		filtroReg.addUrlPatterns("/otromas");
+		filtroReg.addUrlPatterns("/v1/cursos/*");
 		return filtroReg;
 	}
 
