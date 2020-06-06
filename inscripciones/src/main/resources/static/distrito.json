@@ -1,0 +1,28 @@
+/* Objeto JSON tiene atributos separados por coma
+   los atributos se escriben nombre:valor
+   
+   En JSON String no es Objeto
+*/
+{
+	"id": 8,
+	"nombre" : "Distrito 8",
+	"instituciones": [
+		{
+			"id": 8,
+			"nombre" : "CFP 401",
+			"numero" : "401",
+			"direccion" : "Brown 3990",
+			"localidad" : "Olavarria",
+			"distrito" : null
+		},
+		{
+			"id": 9,
+			"nombre" : "Escuela EEM 8",
+			"numero" : "8",
+			"direccion" : "Brown y Hipolito Yrigoyen",
+			"localidad" : "Olavarria",
+			"distrito" : null
+		}
+		
+	]
+}
