@@ -29,6 +29,7 @@ public class ProfesoresController {
 	@GetMapping(value = "", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Object> getAllProfesores() {
 		List<Profesor> respuesta = profesoresService.getAllProfesores();
+		
 		return new ResponseEntity<Object>(respuesta, HttpStatus.OK);
 	}
 
@@ -36,6 +37,7 @@ public class ProfesoresController {
 	@GetMapping(value = "/{idProfesor}", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Object> getProfesorbyId(@PathVariable("idProfesor") Integer idProfesor) {
 		Profesor respuesta = profesoresService.getProfesorById(idProfesor);
+		
 		return new ResponseEntity<Object>(respuesta, HttpStatus.OK);
 	}
 
