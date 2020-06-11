@@ -10,6 +10,7 @@ public class Curso {
 	private Date fechaInicio;
 	private String periodoAcademico;
 	private Institucion institucion;
+	private Profesor profesor;
 	/**
 	 * @return the id
 	 */
@@ -82,6 +83,18 @@ public class Curso {
 	public void setInstitucion(Institucion institucion) {
 		this.institucion = institucion;
 	}
+    /**
+     * @return the profesor
+     */
+    public Profesor getProfesor() {
+        return profesor;
+    }
+    /**
+     * @param profesor the profesor to set
+     */
+    public void setProfesor(Profesor profesor) {
+        this.profesor = profesor;
+    }
 	
 	
 	
