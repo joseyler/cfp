@@ -1,4 +1,4 @@
-package ar.gob.cfp.autorizaciones.modelo;
+package ar.gob.cfp.commons.model.autorizacion;
 
 public class DatosAcceso {
 

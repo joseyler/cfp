@@ -3,10 +3,10 @@ package ar.gob.cfp.distrito.dao.mappers;
 import java.util.ArrayList;
 import java.util.List;
 
+import ar.gob.cfp.commons.model.Distrito;
+import ar.gob.cfp.commons.model.Institucion;
 import ar.gob.cfp.distrito.dao.entities.DistritoEntity;
 import ar.gob.cfp.distrito.dao.entities.InstitucionEntity;
-import ar.gob.cfp.distrito.modelo.Distrito;
-import ar.gob.cfp.distrito.modelo.Institucion;
 
 public class DistritoMapper {
 
