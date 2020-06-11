@@ -4,9 +4,8 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import ar.gob.cfp.commons.model.Institucion;
 import ar.gob.cfp.distrito.dao.InstitucionesDao;
-import ar.gob.cfp.distrito.modelo.Distrito;
-import ar.gob.cfp.distrito.modelo.Institucion;
 
 @Service
 public class InstitucionesService {

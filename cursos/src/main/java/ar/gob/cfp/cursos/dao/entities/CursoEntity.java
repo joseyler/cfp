@@ -22,6 +22,8 @@ public class CursoEntity {
 	private Date fechaInicio;
 	private String periodoAcademico;
 	private Integer idInstitucion;
+	private Integer idProfesor;
+	private Integer cicloLectivo;
 	/**
 	 * @return the id
 	 */
@@ -94,6 +96,30 @@ public class CursoEntity {
 	public void setIdInstitucion(Integer idInstitucion) {
 		this.idInstitucion = idInstitucion;
 	}
+    /**
+     * @return the idProfesor
+     */
+    public Integer getIdProfesor() {
+        return idProfesor;
+    }
+    /**
+     * @param idProfesor the idProfesor to set
+     */
+    public void setIdProfesor(Integer idProfesor) {
+        this.idProfesor = idProfesor;
+    }
+    /**
+     * @return the cicloLectivo
+     */
+    public Integer getCicloLectivo() {
+        return cicloLectivo;
+    }
+    /**
+     * @param cicloLectivo the cicloLectivo to set
+     */
+    public void setCicloLectivo(Integer cicloLectivo) {
+        this.cicloLectivo = cicloLectivo;
+    }
 	
 	
 	
