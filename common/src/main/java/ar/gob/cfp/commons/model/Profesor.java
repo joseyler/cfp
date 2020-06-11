@@ -11,6 +11,7 @@ public class Profesor {
 	private String apellido;
 	private String titulo;
 	private Date fechaNacimiento;
+	
 	/**
 	 * @return the id
 	 */
