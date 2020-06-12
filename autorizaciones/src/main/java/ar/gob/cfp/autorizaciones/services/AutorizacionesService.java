@@ -1,5 +1,6 @@
 package ar.gob.cfp.autorizaciones.services;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
@@ -7,10 +8,11 @@ import java.util.Map;
 
 import org.springframework.stereotype.Service;
 
-import ar.gob.cfp.autorizaciones.modelo.DatosAcceso;
-import ar.gob.cfp.autorizaciones.modelo.InfoSesion;
-import ar.gob.cfp.autorizaciones.modelo.Usuario;
-import ar.gob.cfp.autorizaciones.modelo.ValidacionToken;
+import ar.gob.cfp.commons.jsonmap.ObjectMapperProvider;
+import ar.gob.cfp.commons.model.autorizacion.DatosAcceso;
+import ar.gob.cfp.commons.model.autorizacion.InfoSesion;
+import ar.gob.cfp.commons.model.autorizacion.Usuario;
+import ar.gob.cfp.commons.model.autorizacion.ValidacionToken;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jws;
 import io.jsonwebtoken.JwtBuilder;
@@ -25,10 +27,11 @@ public class AutorizacionesService {
 	private static final String PRIVATE_KEY = "hjfdsahjkdn43__---dfsgasjhcvu&&&22221233445554344dFGFSDCVGFGDSD3223234DCFS";
 
 	public ValidacionToken validarSesion(DatosAcceso datos) {
-		
 		//validar en base de datos u otro metodos si el nombre y password son correctos
-		Usuario usuario = new Usuario(datos.getNombre()); //supongo OK;
-		
+		Usuario usuario = new Usuario(); //supongo OK;
+		usuario.setNombre(datos.getNombre());
+		usuario.setRoles(new ArrayList<String>());
+		usuario.getRoles().add("PRECEPTOR");
 		Date expiracionToken = new Date();
 		Calendar cal = Calendar.getInstance();
 		cal.setTime(expiracionToken);
@@ -36,7 +39,7 @@ public class AutorizacionesService {
 		expiracionToken = cal.getTime();  // la fecha actual + 8 horas
 		
 		Map<String,Object> informacionToken = new HashMap<String, Object>();
-		informacionToken.put("usuario","usuario en json");
+		informacionToken.put("usuario",ObjectMapperProvider.pasarAJSON(usuario));
 		
 		JwtBuilder jwtBuilder = Jwts.builder();
 		jwtBuilder.setClaims(informacionToken);
@@ -57,9 +60,11 @@ public class AutorizacionesService {
 			// a partir de esta linea es valido
 			Claims claims = parseado.getBody();
 			InfoSesion infoSesion = new InfoSesion();
-			infoSesion.setUsuario(new Usuario("")); 
+ 
 			//lo debemos extraer del token
-			claims.get("usuario");//obtenemos el usuario
+			String usuarioEnJson = (String) claims.get("usuario");//obtenemos el usuario
+			Usuario usuario = ObjectMapperProvider.pasarAObjeto(usuarioEnJson, Usuario.class);
+			infoSesion.setUsuario(usuario);
 			return infoSesion;
 		} catch (Exception e) {
 			e.printStackTrace();
