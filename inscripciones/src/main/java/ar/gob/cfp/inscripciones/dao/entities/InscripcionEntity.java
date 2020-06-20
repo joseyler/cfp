@@ -5,13 +5,15 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "curso")
+@Table(name = "inscripcion")
 public class InscripcionEntity implements Serializable {
 
 	/**
@@ -24,7 +26,7 @@ public class InscripcionEntity implements Serializable {
 	private Integer id;
 	
 	@Column(name = "id_curso")
-	private String idCurso;
+	private Integer idCurso;
 	
 	@Column(name = "id_inscripto")
 	private Integer idInscripto;
@@ -32,6 +34,8 @@ public class InscripcionEntity implements Serializable {
 	@Column(name = "fecha_inscripcion")
 	private Date fechaInscripcion;
 
+	@ManyToOne(fetch = FetchType.LAZY)
+	private InscripcionEntity inscripcion;
     /**
      * @return the id
      */
@@ -49,14 +53,14 @@ public class InscripcionEntity implements Serializable {
     /**
      * @return the idCurso
      */
-    public String getIdCurso() {
+    public Integer getIdCurso() {
         return idCurso;
     }
 
     /**
      * @param idCurso the idCurso to set
      */
-    public void setIdCurso(String idCurso) {
+    public void setIdCurso(Integer idCurso) {
         this.idCurso = idCurso;
     }
 
@@ -72,7 +76,8 @@ public class InscripcionEntity implements Serializable {
      */
     public void setIdInscripto(Integer idInscripto) {
         this.idInscripto = idInscripto;
-    }
+    } 
+    
 
     /**
      * @return the fechaInscripcion
