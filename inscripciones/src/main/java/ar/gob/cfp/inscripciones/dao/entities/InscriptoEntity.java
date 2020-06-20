@@ -11,7 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "curso")
+@Table(name = "inscripto")
 public class InscriptoEntity implements Serializable {
 
 	/**
@@ -277,7 +277,4 @@ public class InscriptoEntity implements Serializable {
     }
 
    
-	
-	
-
 }
