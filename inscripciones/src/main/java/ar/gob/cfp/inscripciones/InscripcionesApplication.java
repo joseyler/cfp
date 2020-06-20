@@ -9,6 +9,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 
+
 import ar.gob.cfp.commons.jsonmap.ObjectMapperProvider;
 import ar.gob.cfp.commons.model.Curso;
 import ar.gob.cfp.commons.model.Inscripcion;
@@ -58,4 +59,4 @@ public class InscripcionesApplication {
         return commonsMultipartResolver;
     }
 
-}
+}	
