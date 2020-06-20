@@ -3,6 +3,7 @@ package ar.gob.cfp.inscripciones.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -15,9 +16,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import ar.gob.cfp.commons.exceptions.CfpException;
 import ar.gob.cfp.commons.exceptions.ObjetoNoEncontradoCfpException;
-import ar.gob.cfp.inscripciones.services.PdfService;
 import ar.gob.cfp.commons.model.Inscripcion;
 import ar.gob.cfp.inscripciones.services.InscripcionesService;
+import ar.gob.cfp.inscripciones.services.PdfService;
 
 
 @RestController
