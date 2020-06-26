@@ -9,6 +9,8 @@ import org.springframework.web.client.HttpStatusCodeException;
 import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+
 import ar.gob.cfp.commons.exceptions.CfpException;
 import ar.gob.cfp.commons.exceptions.RestClienteCallCfpException;
 import ar.gob.cfp.commons.model.Curso;
@@ -20,9 +22,12 @@ import ar.gob.cfp.inscripciones.dao.InscripcionDao;
 public class InscripcionesService {
 
 	InscripcionDao inscDao;
+	
+	CursosComponent cursosComponent;
 
-	public InscripcionesService(InscripcionDao inscDao) {
+	public InscripcionesService(InscripcionDao inscDao,CursosComponent cursosComponent) {
 		this.inscDao = inscDao;
+		this.cursosComponent = cursosComponent;
 	}
 
 	public Inscripcion crearInscripcion(Inscripcion inscripcion) {
@@ -36,7 +41,7 @@ public class InscripcionesService {
 		for (Inscripcion inscripcion : inscripciones) {
 			Inscripto inscripto = inscDao.getInscriptoById(inscripcion.getInscripto().getId());
 			inscripcion.setInscripto(inscripto);
-			Curso curso = getCurso(inscripcion.getCurso().getId());
+			Curso curso =cursosComponent.getCurso(inscripcion.getCurso().getId());
 			if (curso != null) {
 				inscripcion.setCurso(curso);
 			}
@@ -56,7 +61,7 @@ public class InscripcionesService {
 		return inscripcionById;
 	}
 
-	private Curso getCurso(Integer id)throws CfpException {
+	public Curso getCurso(Integer id) throws CfpException {
 		try {
 			RestTemplate rs = new RestTemplate();
 			String url = "http://localhost:8073/cursos/v1/cursos/" + id;
