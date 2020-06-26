@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import ar.gob.cfp.commons.exceptions.CfpException;
 import ar.gob.cfp.commons.model.Profesor;
 import ar.gob.cfp.personal.services.ProfesoresServices;
 
@@ -27,7 +28,7 @@ public class ProfesoresController {
 
 	// http://localhost:8072/personal/v1/profesores
 	@GetMapping(value = "", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Object> getAllProfesores() {
+	public ResponseEntity<Object> getAllProfesores() throws CfpException {
 		List<Profesor> respuesta = profesoresService.getAllProfesores();
 		
 		return new ResponseEntity<Object>(respuesta, HttpStatus.OK);
@@ -35,7 +36,7 @@ public class ProfesoresController {
 
 	// http://localhost:8072/personal/v1/profesores/8
 	@GetMapping(value = "/{idProfesor}", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Object> getProfesorbyId(@PathVariable("idProfesor") Integer idProfesor) {
+	public ResponseEntity<Object> getProfesorbyId(@PathVariable("idProfesor") Integer idProfesor) throws CfpException {
 		Profesor respuesta = profesoresService.getProfesorById(idProfesor);
 		
 		return new ResponseEntity<Object>(respuesta, HttpStatus.OK);
@@ -43,7 +44,7 @@ public class ProfesoresController {
 
 	// http://localhost:8072/personal/v1/profesores
 	@PostMapping(value = "", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Object> saveProfesor(@RequestBody Profesor profesor) {
+	public ResponseEntity<Object> saveProfesor(@RequestBody Profesor profesor) throws CfpException {
 		Profesor respuesta = profesoresService.guardarProfesor(profesor);
 		return new ResponseEntity<Object>(respuesta, HttpStatus.CREATED);
 	}
@@ -51,7 +52,7 @@ public class ProfesoresController {
 	// http://localhost:8072/personal/v1/profesores/8
 	@PutMapping(value = "/{idProfesor}", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Object> updateProfesor(@PathVariable("idProfesor") Integer idProfesor,
-			@RequestBody Profesor profesor) {
+			@RequestBody Profesor profesor) throws CfpException {
 		if (!idProfesor.equals(profesor.getId())) {
 			return new ResponseEntity<Object>("Error: el id parametrizado no coincide con el del cuerpo",
 					HttpStatus.BAD_REQUEST);
@@ -62,7 +63,7 @@ public class ProfesoresController {
 
 	// http://localhost:8072/personal/v1/profesores/8
 	@DeleteMapping(value = "/{idProfesor}", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Object> deleteProfesor(@PathVariable("idProfesor") Integer idProfesor) {
+	public ResponseEntity<Object> deleteProfesor(@PathVariable("idProfesor") Integer idProfesor) throws CfpException {
 		profesoresService.deleteProfesor(idProfesor);
 		return new ResponseEntity<Object>(null, HttpStatus.NO_CONTENT);
 	}

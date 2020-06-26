@@ -6,6 +6,9 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import ar.gob.cfp.commons.exceptions.CfpException;
+import ar.gob.cfp.commons.exceptions.ObjetoNoEncontradoCfpException;
+import ar.gob.cfp.commons.exceptions.RecursoExistenteCfpException;
 import ar.gob.cfp.commons.model.Profesor;
 import ar.gob.cfp.personal.dao.entities.ProfesorEntity;
 import ar.gob.cfp.personal.dao.mappers.ProfesorMapper;
@@ -37,17 +40,25 @@ public class ProfesorDao  {
 	}
 
 	
-	public Profesor guardarProfesor(Profesor prof) {
+	public Profesor guardarProfesor(Profesor prof) throws CfpException, RecursoExistenteCfpException {
+		List<ProfesorEntity> profesoresDelDni = repo.findByDni(prof.getDni());
+		if(profesoresDelDni.isEmpty()) {
 		ProfesorEntity ent = ProfesorMapper.mapEntity(prof);
 		repo.save(ent);
 		prof.setId(ent.getId());
 		return prof;
+		}else {
+			throw new RecursoExistenteCfpException("Ya existe un profesor para el dni: ");
+		}
 	}
 
-	public Profesor getProfesorById(Integer idProfesor) {
+	public Profesor getProfesorById(Integer idProfesor) throws CfpException {
 		Optional<ProfesorEntity> entOp = this.repo.findById(idProfesor);
-		ProfesorEntity ProfesorEntity = entOp.get();
-		return ProfesorMapper.mapProfesorModelo(ProfesorEntity);
+		ProfesorEntity profesorEntity = entOp.get();
+		if(profesorEntity ==null) {
+			throw new ObjetoNoEncontradoCfpException("No se encuentra el profesor para el id:" + idProfesor);
+		}
+		return ProfesorMapper.mapProfesorModelo(profesorEntity);
 	}
 
 	
