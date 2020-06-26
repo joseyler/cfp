@@ -7,6 +7,7 @@ import org.springframework.http.HttpMethod;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import ar.gob.cfp.commons.exceptions.CfpException;
 import ar.gob.cfp.commons.model.Curso;
 import ar.gob.cfp.commons.model.Institucion;
 import ar.gob.cfp.commons.model.Profesor;
@@ -42,7 +43,7 @@ public class CursosService {
 		
 	}
 	
-	public Curso buscarCursoId(Integer id) {
+	public Curso buscarCursoId(Integer id) throws CfpException {
 		
 		return cursosDao.buscarCursoId(id);
 	}

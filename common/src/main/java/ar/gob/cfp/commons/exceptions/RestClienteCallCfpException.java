@@ -1,23 +1,30 @@
 package ar.gob.cfp.commons.exceptions;
 
-public class RestClienteCallCfpException extends Exception {
+
+
+public class RestClienteCallCfpException extends CfpException {
 
     /**
      * 
      */
     private static final long serialVersionUID = 1L;
-
-    int statusCode;
     
-    public RestClienteCallCfpException(int statusCode, String message) {
+    int statusCode;
+
+    public RestClienteCallCfpException(int statusCode,String message) {
         super(message);
         this.statusCode = statusCode;
-        
     }
 
-	public int getStatusCode() {
-		return statusCode;
-	}
+    /**
+     * @return the statusCode
+     */
+    public int getStatusCode() {
+        return statusCode;
+    }
     
-   
+    
+    
+
+
 }

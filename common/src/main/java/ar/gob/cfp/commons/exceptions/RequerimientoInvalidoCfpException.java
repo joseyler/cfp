@@ -1,6 +1,8 @@
 package ar.gob.cfp.commons.exceptions;
 
-public class RequerimientoInvalidoCfpException extends Exception {
+
+public class RequerimientoInvalidoCfpException extends CfpException {
+
 
     /**
      * 

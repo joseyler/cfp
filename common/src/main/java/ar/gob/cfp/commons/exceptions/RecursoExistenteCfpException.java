@@ -1,6 +1,8 @@
 package ar.gob.cfp.commons.exceptions;
 
-public class RecursoExistenteCfpException extends Exception {
+
+public class RecursoExistenteCfpException extends CfpException {
+
 
     /**
      * 
