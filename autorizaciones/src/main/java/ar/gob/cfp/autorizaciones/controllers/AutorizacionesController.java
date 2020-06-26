@@ -10,13 +10,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import ar.gob.cfp.autorizaciones.services.AutorizacionesService;
+import ar.gob.cfp.commons.CfpRestController;
+import ar.gob.cfp.commons.exceptions.CfpException;
 import ar.gob.cfp.commons.model.autorizacion.DatosAcceso;
 import ar.gob.cfp.commons.model.autorizacion.InfoSesion;
 import ar.gob.cfp.commons.model.autorizacion.ValidacionToken;
 
 @RestController
 @RequestMapping("/v1")
-public class AutorizacionesController {
+public class AutorizacionesController extends CfpRestController {
 
 	@Autowired
 	AutorizacionesService authService;
@@ -27,8 +29,8 @@ public class AutorizacionesController {
 		try {
 			ValidacionToken respuesta = authService.validarSesion(datos);
 			return new ResponseEntity<Object>(respuesta, HttpStatus.OK);
-		} catch (Exception e) {
-			return new ResponseEntity<Object>("Validacion error", HttpStatus.UNAUTHORIZED);
+		} catch (CfpException e) {
+			return procesarException(e);
 		}
 	}
 	
@@ -36,14 +38,9 @@ public class AutorizacionesController {
 	public ResponseEntity<Object> validar(@RequestBody ValidacionToken valToken) {
 		try {
 			InfoSesion infoSesion = authService.validarToken(valToken);
-			if (infoSesion!=null) {
-				return new ResponseEntity<Object>(infoSesion, HttpStatus.OK);
-			} else {
-				return new ResponseEntity<Object>("Token no valido para acceso", HttpStatus.UNAUTHORIZED);
-			}
-			
-		} catch (Exception e) {
-			return new ResponseEntity<Object>("Error en validacion", HttpStatus.UNAUTHORIZED);
+			return new ResponseEntity<Object>(infoSesion, HttpStatus.OK);
+		} catch (CfpException e) {
+		    return procesarException(e);
 		}
 		
 	}
