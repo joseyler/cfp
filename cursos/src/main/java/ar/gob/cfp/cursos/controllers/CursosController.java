@@ -14,13 +14,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import ar.gob.cfp.commons.CfpRestController;
+import ar.gob.cfp.commons.exceptions.CfpException;
 import ar.gob.cfp.commons.model.Curso;
 import ar.gob.cfp.cursos.exceptions.InstitucionInexistenteException;
 import ar.gob.cfp.cursos.services.CursosService;
 
 @RestController
 @RequestMapping("/v1/cursos")
-public class CursosController {
+public class CursosController extends CfpRestController {
 
 	@Autowired
 	CursosService cursosService;
@@ -29,20 +31,21 @@ public class CursosController {
 	public ResponseEntity<Object> buscarCurso(@RequestParam(name = "idInstitucion", required = true) Integer idInstitucion ){
 		List<Curso> listaCursos = cursosService.buscarCurso(idInstitucion); 
 		if(listaCursos != null) {
-			return new ResponseEntity(listaCursos, HttpStatus.OK);
+			return new ResponseEntity<Object>(listaCursos, HttpStatus.OK);
 		}else {
-			return new ResponseEntity(HttpStatus.NOT_FOUND);
+			return new ResponseEntity<Object>(HttpStatus.NOT_FOUND);
 		}
 	}  
 	
 	@GetMapping(value= "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Object> buscarCursoId(@PathVariable(name="id", required = true) Integer id){
-		Curso curso = cursosService.buscarCursoId(id); 
-		if(curso != null) {
-			return new ResponseEntity(curso, HttpStatus.OK);
-		}else {
-			return new ResponseEntity(HttpStatus.NOT_FOUND);
-		}
+	    try {
+	        Curso curso = cursosService.buscarCursoId(id); 
+	        return new ResponseEntity<Object>(curso, HttpStatus.OK);
+	    } catch (CfpException e) {
+            return procesarException(e);
+        }
+		
 	}
 	
 	// http://localhost:8073/cursos/v1/cursos
