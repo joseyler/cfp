@@ -10,5 +10,6 @@ public interface ProfesorRepository extends CrudRepository<ProfesorEntity, Integ
 	
 	List<ProfesorEntity> findAll();
 
+    List<ProfesorEntity> findByDni(Integer dni);
 
 }
