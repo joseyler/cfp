@@ -29,12 +29,14 @@ public class CursosController extends CfpRestController {
 	// http://localhost:8073/cursos/v1/cursos
 	@GetMapping(value= "", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Object> buscarCurso(@RequestParam(name = "idInstitucion", required = true) Integer idInstitucion ){
-		List<Curso> listaCursos = cursosService.buscarCurso(idInstitucion); 
-		if(listaCursos != null) {
-			return new ResponseEntity<Object>(listaCursos, HttpStatus.OK);
-		}else {
-			return new ResponseEntity<Object>(HttpStatus.NOT_FOUND);
-		}
+		try {
+			List<Curso> listaCursos = cursosService.buscarCurso(idInstitucion); 
+			
+				return new ResponseEntity<Object>(listaCursos, HttpStatus.OK);
+			
+		}catch(CfpException e) {
+			return procesarException(e);
+		}	
 	}  
 	
 	@GetMapping(value= "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
