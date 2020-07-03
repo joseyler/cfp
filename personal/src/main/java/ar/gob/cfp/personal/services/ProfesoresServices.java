@@ -12,12 +12,12 @@ import ar.gob.cfp.personal.dao.ProfesorDao;
 
 @Service
 public class ProfesoresServices {
-	
-	
+    
+    
+    private static final Logger LOGGER = LoggerFactory.getLogger(ProfesoresServices.class);
+
     ProfesorDao profDao;
 
-
-    	
     public ProfesoresServices(ProfesorDao profDao) {
         this.profDao = profDao;
     }
@@ -37,8 +37,7 @@ public class ProfesoresServices {
         } catch (CfpException e) {
             throw e;
         } catch (Exception e) {
-            // logear el error
-        	//LOGGER.error();
+            LOGGER.error(e.getMessage(),e);
             throw new CfpException("Ha ocurrido un error obteniendo el profesor de id." + idProfesor + ".  Mensaje: " + e.getMessage());
         }
     }

@@ -84,6 +84,28 @@ public class CursosService {
 	}
 
 	/////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	public Curso putCurso(Curso curso) throws CfpException{
+		try {
+			Curso respuestaDao = cursosDao.actualizar(curso);
+			return respuestaDao;
+		}catch(CfpException e) {
+			throw e;
+		}
+	}
+	
+////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	public void deleteCurso(Integer id) throws CfpException{
+		try {
+			
+			cursosDao.eliminar(id);
+		}catch(CfpException e) {
+			throw e; 
+		}
+		
+	}
+////////////////////////////////////////////////////////////////////////////////////////////////
 	private Institucion existeInstitucion(Integer id) throws CfpException {
 		try {
 			RestTemplate rs = new RestTemplate();
@@ -98,10 +120,11 @@ public class CursosService {
 				return institucion;
 			
 		} catch (HttpStatusCodeException e) {
-		   LOGGER.error("Error al conectarse a la API instituciones... ", e);
-		    
 		    throw new RestClienteCallCfpException(e.getRawStatusCode(), "Error en llamada a curso api: " + e.getResponseBodyAsString());
-		} 
+		} catch(Exception e) {
+			LOGGER.error("Error al conectarse a la API instituciones... ", e);
+			throw new CfpException("Error Inesperado buscando Institucion " + e.getMessage());
+		}
 			
 	}
 	
@@ -125,6 +148,9 @@ public class CursosService {
 			throw new RestClienteCallCfpException(e.getRawStatusCode(), " Error en la llamada a profesores api: "+ e.getResponseBodyAsString());
 		}
 	}
+
+
+	
 
 	
 }

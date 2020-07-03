@@ -62,6 +62,29 @@ public class CursosDao  {
 		
 	}
 
+	public Curso actualizar(Curso curso) throws CfpException{
+		try {
+			Optional<CursoEntity> enti = this.repo.findById(curso.getId());
+			CursoEntity entidad = enti.get();
+			CursoEntity cursoActualizar = CursosMapper.mapEntity(curso);
+			repo.save(cursoActualizar);
+			return curso;
+		}catch(NoSuchElementException e) {
+			throw new ObjetoNoEncontradoCfpException("No se encuentra el curso "+curso.getId()+", para actualizarlo.");
+		}
+		
+	}
+
+	public void eliminar(Integer id) throws CfpException {
+		try {
+			Optional<CursoEntity> enti = this.repo.findById(id);
+			CursoEntity entidad = enti.get();
+			repo.delete(entidad);
+		}catch(NoSuchElementException e) {
+			throw new ObjetoNoEncontradoCfpException("No se encuentra el curso "+ id +", para eliminarlo.");
+		}
+	}
+
 	
 
 	
