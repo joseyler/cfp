@@ -48,7 +48,7 @@ public class InscripcionesController extends CfpRestController {
 
     // http://localhost:8071/inscripciones/v1/inscrpciones
     @PostMapping(value = "", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Object> crearInscripcion(@RequestBody Inscripcion inscripcion) {
+    public ResponseEntity<Object> crearInscripcion(@RequestBody Inscripcion inscripcion) throws CfpException {
         Inscripcion respuesta = inscripcionesService.crearInscripcion(inscripcion);
         return new ResponseEntity<Object>(respuesta, HttpStatus.CREATED);
     }
