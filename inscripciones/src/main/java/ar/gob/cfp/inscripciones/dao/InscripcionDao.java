@@ -3,8 +3,13 @@ package ar.gob.cfp.inscripciones.dao;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import ar.gob.cfp.commons.jsonmap.ObjectMapperProvider;
 import ar.gob.cfp.commons.model.Inscripcion;
 import ar.gob.cfp.commons.model.Inscripto;
 import ar.gob.cfp.inscripciones.dao.entities.InscripcionEntity;
@@ -14,6 +19,9 @@ import ar.gob.cfp.inscripciones.dao.mappers.InscriptoMapper;
 
 @Service
 public class InscripcionDao {
+    
+    
+    private static final Logger LOGGER = LoggerFactory.getLogger(InscripcionDao.class);
 
 	@Autowired
 	InscripcionRepository repoInscripcion;
@@ -54,4 +62,7 @@ public class InscripcionDao {
 		return InscriptoMapper.mapInscriptoModelo(InscriptoEntity);
 	}
 	
+	public void getInscripcionExistente() {
+	    LOGGER.info(ObjectMapperProvider.pasarAJSON(repoInscripcion.findByIdCursoAndInscriptoDni(2,32545689L)));
+	}
 }               

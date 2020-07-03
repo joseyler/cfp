@@ -46,6 +46,7 @@ public class InscripcionesService {
 				inscripcion.setCurso(curso);
 			}
 		}
+		inscDao.getInscripcionExistente();
 		return inscripciones;
 	}
 
