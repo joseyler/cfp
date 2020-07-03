@@ -2,9 +2,13 @@ package ar.gob.cfp.inscripciones.dao;
 
 import java.util.Date;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import ar.gob.cfp.commons.exceptions.CfpException;
+import ar.gob.cfp.commons.exceptions.ObjetoNoEncontradoCfpException;
 import ar.gob.cfp.commons.model.Inscripcion;
 import ar.gob.cfp.commons.model.Inscripto;
 import ar.gob.cfp.inscripciones.dao.entities.InscripcionEntity;
@@ -41,11 +45,14 @@ public class InscripcionDao {
 		return inscripto;
 	}
 
-	public Inscripcion getInscripcionById(Integer idInscripto) {
+	public Inscripcion getInscripcionById(Integer idInscripto) throws CfpException {
+		try {
 		Optional<InscripcionEntity> entOp = this.repoInscripcion.findById(idInscripto);
 		InscripcionEntity InscripcionEntity = entOp.get();
 		return InscripcionMapper.mapInscripcionModelo(InscripcionEntity);
-				
+		}catch (NoSuchElementException e) {
+			throw new ObjetoNoEncontradoCfpException("No se encuentra incripcion para el id: " +idInscripto );
+		}
 	}
 
 	public Inscripto getInscriptoById(Integer id) {

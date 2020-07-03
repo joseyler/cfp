@@ -9,6 +9,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -35,8 +36,18 @@ public class InscripcionEntity implements Serializable {
 	private Date fechaInscripcion;
 
 	@ManyToOne(fetch = FetchType.LAZY)
-	private InscripcionEntity inscripcion;
-    /**
+	@JoinColumn(name = "id_inscripto", insertable = false, updatable = false)
+	private InscriptoEntity inscripto;
+   
+	public InscriptoEntity getInscripto() {
+		return inscripto;
+	}
+
+	public void setInscripto(InscriptoEntity inscripto) {
+		this.inscripto = inscripto;
+	}
+
+	/**
      * @return the id
      */
     public Integer getId() {

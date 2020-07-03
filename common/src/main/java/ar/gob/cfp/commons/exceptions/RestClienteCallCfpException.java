@@ -1,7 +1,5 @@
 package ar.gob.cfp.commons.exceptions;
 
-
-
 public class RestClienteCallCfpException extends CfpException {
 
     /**
@@ -23,8 +21,4 @@ public class RestClienteCallCfpException extends CfpException {
         return statusCode;
     }
     
-    
-    
-
-
 }

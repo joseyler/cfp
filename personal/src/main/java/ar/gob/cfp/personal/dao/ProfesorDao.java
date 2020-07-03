@@ -20,7 +20,6 @@ public class ProfesorDao {
     @Autowired
     ProfesorRepository repo;
 
-
     // public List<Profesor> getAll2() {
     // EntityManager em = emf.createEntityManager();
     // try {
@@ -36,12 +35,10 @@ public class ProfesorDao {
     // }
 
 
-
     public List<Profesor> getAll() {
         List<ProfesorEntity> resultList = repo.findAll();
         return ProfesorMapper.mapModelo(resultList);
     }
-
 
     public Profesor guardarProfesor(Profesor prof) throws CfpException {
         List<ProfesorEntity> profesoresDelDni = repo.findByDni(prof.getDni());

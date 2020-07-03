@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import ar.gob.cfp.commons.CfpRestController;
 import ar.gob.cfp.commons.exceptions.CfpException;
 import ar.gob.cfp.commons.exceptions.RequerimientoInvalidoCfpException;
@@ -40,8 +39,6 @@ public class ProfesoresController extends CfpRestController {
         }
     }
 
-
-
     // http://localhost:8072/personal/v1/profesores/8
     @GetMapping(value = "/{idProfesor}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Object> getProfesorbyId(@PathVariable("idProfesor") Integer idProfesor) {
@@ -53,8 +50,6 @@ public class ProfesoresController extends CfpRestController {
         }
     }
 
-
-
     // http://localhost:8072/personal/v1/profesores
     @PostMapping(value = "", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Object> saveProfesor(@RequestBody Profesor profesor) {
@@ -65,8 +60,6 @@ public class ProfesoresController extends CfpRestController {
             return procesarException(e);
         }
     }
-
-
 
     // http://localhost:8072/personal/v1/profesores/8
     @PutMapping(value = "/{idProfesor}", produces = MediaType.APPLICATION_JSON_VALUE)
@@ -82,8 +75,6 @@ public class ProfesoresController extends CfpRestController {
         }
     }
 
-
-
     // http://localhost:8072/personal/v1/profesores/8
     @DeleteMapping(value = "/{idProfesor}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Object> deleteProfesor(@PathVariable("idProfesor") Integer idProfesor) {
@@ -94,6 +85,5 @@ public class ProfesoresController extends CfpRestController {
             return procesarException(e);
         }
     }
-
 
 }
