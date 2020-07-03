@@ -6,10 +6,7 @@ import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.HttpStatusCodeException;
-import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
-
-import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 
 import ar.gob.cfp.commons.exceptions.CfpException;
 import ar.gob.cfp.commons.exceptions.RestClienteCallCfpException;
@@ -22,46 +19,59 @@ import ar.gob.cfp.inscripciones.dao.InscripcionDao;
 public class InscripcionesService {
 
 	InscripcionDao inscDao;
-	
+
 	CursosComponent cursosComponent;
 
-	public InscripcionesService(InscripcionDao inscDao,CursosComponent cursosComponent) {
+	public InscripcionesService(InscripcionDao inscDao, CursosComponent cursosComponent) {
 		this.inscDao = inscDao;
 		this.cursosComponent = cursosComponent;
 	}
 
-	public Inscripcion crearInscripcion(Inscripcion inscripcion) {
+	public Inscripcion crearInscripcion(Inscripcion inscripcion) throws CfpException {
 		Inscripto inscriptoCreado = inscDao.crearInscripto(inscripcion.getInscripto());
 		inscripcion.setInscripto(inscriptoCreado);
 		return inscDao.crearInscripcion(inscripcion);
 	}
+	
+
 
 	public List<Inscripcion> getAllInscripciones() throws CfpException {
-		List<Inscripcion> inscripciones = inscDao.getAll();
-		for (Inscripcion inscripcion : inscripciones) {
-			Inscripto inscripto = inscDao.getInscriptoById(inscripcion.getInscripto().getId());
-			inscripcion.setInscripto(inscripto);
-			Curso curso =cursosComponent.getCurso(inscripcion.getCurso().getId());
-			if (curso != null) {
-				inscripcion.setCurso(curso);
-			}
+
+		try {
+			return inscDao.getAll();
+		} catch (Exception e) {
+			// logear el error
+			throw new CfpException("Ha ocurrido un error obteniendo todos las inscripciones." + e.getMessage());
 		}
-		inscDao.getInscripcionExistente();
-		return inscripciones;
 	}
 
+	/*
+	 * for (Inscripcion inscripcion : inscripciones) { Inscripto inscripto =
+	 * inscDao.getInscriptoById(inscripcion.getInscripto().getId());
+	 * inscripcion.setInscripto(inscripto); Curso curso
+	 * =cursosComponent.getCurso(inscripcion.getCurso().getId()); if (curso != null)
+	 * { inscripcion.setCurso(curso); } } return inscripciones; }
+	 */
 	public Inscripcion getInscripcionById(Integer idInscripto) throws CfpException {
-
-		Inscripcion inscripcionById = inscDao.getInscripcionById(idInscripto);
-		Inscripto inscripto = inscDao.getInscriptoById(inscripcionById.getInscripto().getId());
-		inscripcionById.setInscripto(inscripto);
-		Curso curso = getCurso(inscripcionById.getCurso().getId());
-		if (curso != null) {
-			inscripcionById.setCurso(curso);
+		try {
+			return inscDao.getInscripcionById(idInscripto);
+			// } catch (CfpException e) {
+			// throw e;
+		} catch (Exception e) {
+			// logear el error
+			throw new CfpException("Ha ocurrido un error obteniendo la inscripcion de id." + idInscripto
+					+ ".  Mensaje: " + e.getMessage());
 		}
-		return inscripcionById;
 	}
 
+	/*
+	 * Inscripcion inscripcionById = inscDao.getInscripcionById(idInscripto);
+	 * Inscripto inscripto =
+	 * inscDao.getInscriptoById(inscripcionById.getInscripto().getId());
+	 * inscripcionById.setInscripto(inscripto); Curso curso =
+	 * getCurso(inscripcionById.getCurso().getId()); if (curso != null) {
+	 * inscripcionById.setCurso(curso); } return inscripcionById; }
+	 */
 	public Curso getCurso(Integer id) throws CfpException {
 		try {
 			RestTemplate rs = new RestTemplate();
@@ -70,11 +80,12 @@ public class InscripcionesService {
 			Curso curso = rs.exchange(url, HttpMethod.GET, entidadHttp, Curso.class).getBody();
 			return curso;
 		} catch (HttpStatusCodeException e) {
-		    //logear excepcion
-		    
-		    throw new RestClienteCallCfpException(e.getRawStatusCode(), "Error en llamada a curso api: " + e.getResponseBodyAsString());
+			// logear excepcion
+
+			throw new RestClienteCallCfpException(e.getRawStatusCode(),
+					"Error en llamada a curso api: " + e.getResponseBodyAsString());
 		} catch (Exception e) {
-		    e.printStackTrace();
+			e.printStackTrace();
 			throw new CfpException("Ocurrio error inesperado obteniendo curso " + e.getMessage());
 		}
 	}
