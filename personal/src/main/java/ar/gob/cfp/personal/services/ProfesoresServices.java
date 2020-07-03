@@ -2,6 +2,8 @@ package ar.gob.cfp.personal.services;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import ar.gob.cfp.commons.exceptions.CfpException;
@@ -10,6 +12,9 @@ import ar.gob.cfp.personal.dao.ProfesorDao;
 
 @Service
 public class ProfesoresServices {
+    
+    
+    private static final Logger LOGGER = LoggerFactory.getLogger(ProfesoresServices.class);
 
     ProfesorDao profDao;
 
@@ -32,7 +37,7 @@ public class ProfesoresServices {
         } catch (CfpException e) {
             throw e;
         } catch (Exception e) {
-            // logear el error
+            LOGGER.error(e.getMessage(),e);
             throw new CfpException("Ha ocurrido un error obteniendo el profesor de id." + idProfesor + ".  Mensaje: " + e.getMessage());
         }
     }
