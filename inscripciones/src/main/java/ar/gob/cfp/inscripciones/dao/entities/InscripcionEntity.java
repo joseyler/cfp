@@ -35,8 +35,16 @@ public class InscripcionEntity implements Serializable {
 	private Date fechaInscripcion;
 
 	@ManyToOne(fetch = FetchType.LAZY)
-	private InscripcionEntity inscripcion;
-    /**
+	private InscriptoEntity inscripto;
+    public InscriptoEntity getInscripto() {
+		return inscripto;
+	}
+
+	public void setInscripto(InscriptoEntity inscripto) {
+		this.inscripto = inscripto;
+	}
+
+	/**
      * @return the id
      */
     public Integer getId() {
