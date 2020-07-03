@@ -70,4 +70,18 @@ public class InscripcionDao {
 		return InscriptoMapper.mapInscriptoModelo(InscriptoEntity);
 	}
 
+	
+   
+
+    public boolean existeInscripcion(Inscripcion inscripcion) {
+        List<InscripcionEntity> resultado = this.repoInscripcion.findByIdCursoAndInscriptoDni(inscripcion.getCurso().getId(), inscripcion.getInscripto().getDni());
+        if (resultado==null || resultado.isEmpty()) {
+            return false;
+        } else {
+            return true;
+        }
+        
+        
+    }
+
 }               
