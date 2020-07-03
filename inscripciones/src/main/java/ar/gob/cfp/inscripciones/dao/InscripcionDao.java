@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import ar.gob.cfp.commons.exceptions.CfpException;
 import ar.gob.cfp.commons.exceptions.ObjetoNoEncontradoCfpException;
 import ar.gob.cfp.commons.exceptions.RecursoExistenteCfpException;
+
 import ar.gob.cfp.commons.model.Inscripcion;
 import ar.gob.cfp.commons.model.Inscripto;
 import ar.gob.cfp.inscripciones.dao.entities.InscripcionEntity;
@@ -68,5 +69,5 @@ public class InscripcionDao {
 		InscriptoEntity InscriptoEntity = entOp.get();
 		return InscriptoMapper.mapInscriptoModelo(InscriptoEntity);
 	}
-	
+
 }               

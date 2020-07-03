@@ -10,6 +10,6 @@ public interface InscripcionRepository extends CrudRepository<InscripcionEntity,
 
 	List<InscripcionEntity> findAll();
 	
-	List<InscripcionEntity> findByIdCursoAndInscriptoDni();
+	List<InscripcionEntity> findByIdCursoAndInscriptoDni(Integer idCurso, Long dniInscripto);
 	
 }
