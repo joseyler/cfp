@@ -33,25 +33,33 @@ public class InscripcionDao {
 	}
 	
 	public Inscripcion crearInscripcion(Inscripcion inscripcion) throws CfpException{
-		
+		try {
 		InscripcionEntity ent = InscripcionMapper.mapEntity(inscripcion);
 		ent.setFechaInscripcion(new Date());
 		repoInscripcion.save(ent);
 		inscripcion.setId(ent.getId());
 		inscripcion.setFechaInscripcion(ent.getFechaInscripcion());
 		return inscripcion;
+		} catch (NoSuchElementException e) {
+		throw new RecursoExistenteCfpException("Ya existe una inscripcion para la " + inscripcion.getId());
+		}
+		
+		
 	}
 	
 	
 	
 	
 	public Inscripto crearInscripto(Inscripto inscripto) throws CfpException{
+		try {
 		InscriptoEntity ent = InscriptoMapper.mapEntity(inscripto);
 		repoInscripto.save(ent);
 		inscripto.setId(ent.getId());
 		return inscripto;
+		} catch (NoSuchElementException e) {
+		throw new RecursoExistenteCfpException("Ya existe un inscripto para el " + inscripto.getId());
 	}
-
+	}
 	public Inscripcion getInscripcionById(Integer idInscripto) throws CfpException{
 		try {
 		Optional<InscripcionEntity> entOp = this.repoInscripcion.findById(idInscripto);
@@ -65,9 +73,13 @@ public class InscripcionDao {
 	}
 
 	public Inscripto getInscriptoById(Integer id) throws CfpException{
+		try {
 		Optional<InscriptoEntity> entOp = this.repoInscripto.findById(id);
 		InscriptoEntity InscriptoEntity = entOp.get();
 		return InscriptoMapper.mapInscriptoModelo(InscriptoEntity);
+		} catch (NoSuchElementException e) {
+			throw new ObjetoNoEncontradoCfpException("No se encuentra la inscripto para el id " + id);
+		}
 	}
 
 	
