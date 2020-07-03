@@ -6,6 +6,8 @@ import org.springframework.cloud.netflix.hystrix.EnableHystrix;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import ar.gob.cfp.cfpservices.filter.AutorizationFilter;
+
 @EnableHystrix
 @Configuration
 public class GatewayConfiguration {
@@ -17,6 +19,7 @@ public class GatewayConfiguration {
                     .path("/personal/**")
                     .filters(f -> f.addRequestHeader("Ruteado", "personal")
                             .addResponseHeader("Routeado", "personal")
+                            .filter(new AutorizationFilter())
                             .hystrix(config -> config.setName("personal")
                                                 .setFallbackUri("forward:/personalfallback")))
                     .uri("http://localhost:8072/personal")
@@ -25,6 +28,7 @@ public class GatewayConfiguration {
                     .path("/distritales/**")
                     .filters(f -> f.addRequestHeader("Routeado", "distritales")
                           .addResponseHeader("Routeado", "personal")
+                          .filter(new AutorizationFilter())
                             .hystrix(config -> config.setName("distritales")
                                                 .setFallbackUri("forward:/distritalesfallback")))
                     .uri("http://localhost:8070/distritales"))
