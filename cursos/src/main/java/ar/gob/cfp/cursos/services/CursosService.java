@@ -47,34 +47,40 @@ public class CursosService {
 				}
 				
 				return respuesta;
-			
-		}catch(CfpException e) {
-			throw e;
-			
-		}	
-		catch(Exception e) {
-			LOGGER.error("ERROR para nosotros...", e);
+				
+		}catch(Exception e) {
+			LOGGER.error("ERROR para Nosotros...", e);
 			throw new CfpException("Ha ocurrido un error obteniendo  cursos del a institucion "+ IdInstitucion +". Mensaje: "+ e.getMessage());
 			
 		}	
 	}		
 
-	
+	//////////////////////////////////////////////////////////
 	public Curso buscarCursoId(Integer id) throws CfpException {
-		
-		return cursosDao.buscarCursoId(id);
+		try {
+			return cursosDao.buscarCursoId(id);
+		}catch(CfpException e) {
+			throw e;
+		}catch(Exception e) {
+			LOGGER.error("Error al buscar curso ID ", e);
+			throw new CfpException("No se pudo encontrar el curso mencionado en el ID. "+ e.getMessage());
+		}	
 	}
-
-	public Curso guardarCurso(Curso curso) throws InstitucionInexistenteException {
-		
-		Institucion instExistente = existeInstitucion(curso.getInstitucion().getId());
-		if (instExistente != null) {
-			curso.setInstitucion(instExistente);
-			
+////////////////////////////////////////////////777
+	
+	public Curso guardarCurso(Curso curso) throws /*InstitucionInexistenteException,*/ CfpException /**/ {
+		try {	
+			Institucion instExistente = existeInstitucion(curso.getInstitucion().getId());
+			curso.setInstitucion(instExistente);	
 			return cursosDao.guardarCurso(curso);
-		} else {
-			throw new InstitucionInexistenteException();
-		}
+			
+		}catch(CfpException e) {
+			//throw new InstitucionInexistenteException();
+			throw e;
+		}catch(Exception e) {
+			LOGGER.error("Error Guardando ", e);
+			throw new CfpException("Ocurrio un error guardando curso "+ e.getMessage());
+		}	
 	}
 
 	/////////////////////////////////////////////////////////////////////////////////////////////////
@@ -85,29 +91,39 @@ public class CursosService {
 			HttpEntity<Object> entidadHttp = new HttpEntity<Object>(null);
 			Institucion institucion = rs.exchange(url, HttpMethod.GET, entidadHttp, Institucion.class).getBody();
 			
-			return institucion;
+			if(institucion==null) {
+				 LOGGER.info("No se encontro la institucion solicitada nro: "+ id);
+				throw new CfpException("Ocurrio error inesperado obteniendo curso ");
+			}
+				return institucion;
 			
 		} catch (HttpStatusCodeException e) {
 		   LOGGER.error("Error al conectarse a la API instituciones... ", e);
 		    
 		    throw new RestClienteCallCfpException(e.getRawStatusCode(), "Error en llamada a curso api: " + e.getResponseBodyAsString());
-		} catch (Exception e) {
-		    LOGGER.info("No se encontro la institucion solicitada nro: "+ id, e);
-			throw new CfpException("Ocurrio error inesperado obteniendo curso " + e.getMessage());
-		}	
+		} 
 			
 	}
 	
 /////////////////////////////////////////////////////////////////////////////////////////////////
-	private Profesor buscarProfesor(Integer id) {
-		RestTemplate rs = new RestTemplate();
-		String url = "http://localhost:8072/personal/v1/profesores/" + id;
-		HttpEntity<Object> entidadHttp = new HttpEntity<Object>(null);
-		Profesor prof = rs.exchange(url, HttpMethod.GET, entidadHttp, Profesor.class).getBody();//REVISAR...;
-		if(prof !=null) {
-			return prof;
+	private Profesor buscarProfesor(Integer id) throws CfpException{
+		try {	
+			RestTemplate rs = new RestTemplate();
+			String url = "http://localhost:8072/personal/v1/profesores/" + id;
+			HttpEntity<Object> entidadHttp = new HttpEntity<Object>(null);
+			Profesor prof = rs.exchange(url, HttpMethod.GET, entidadHttp, Profesor.class).getBody();
+			
+			if(prof==null) {
+				LOGGER.info("No se encontro el profesor solicitado nro: "+ id);
+				throw new CfpException("Ocurrio error inesperado obteniendo el profesor ");
+			}
+				return prof;
+			
+			
+		}catch(HttpStatusCodeException e) {
+			LOGGER.error("Error al conectarse a la API PROFESORES... ", e);
+			throw new RestClienteCallCfpException(e.getRawStatusCode(), " Error en la llamada a profesores api: "+ e.getResponseBodyAsString());
 		}
-		return null;
 	}
 
 	

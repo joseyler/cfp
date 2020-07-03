@@ -14,4 +14,6 @@ public interface CursosRepository extends CrudRepository<CursoEntity, Integer> {
  
  Optional<CursoEntity> findById(Integer id);
 
+List<CursoEntity> findByNombre(String nombre);
+
 }
