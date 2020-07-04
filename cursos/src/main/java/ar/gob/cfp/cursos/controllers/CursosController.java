@@ -59,14 +59,11 @@ public class CursosController extends CfpRestController {
 		try {
 			Curso respuesta = cursosService.guardarCurso(curso);
 			return new ResponseEntity<Object>(respuesta, HttpStatus.CREATED);
-<<<<<<< HEAD
-		} catch (InstitucionInexistenteException e) {
-			return new ResponseEntity<Object>("No existe Institucion indicada", HttpStatus.BAD_REQUEST);
-=======
+
 		} catch (CfpException e) {
 			//return new ResponseEntity<Object>("No existe institucion indicada", HttpStatus.BAD_REQUEST);
 			return procesarException(e);
->>>>>>> refs/remotes/origin/features/nahuel
+
 		}
 		
 	}
