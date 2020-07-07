@@ -6,6 +6,8 @@ import org.springframework.cloud.netflix.hystrix.EnableHystrix;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import ar.gob.cfp.cfpservices.filter.AutorizationFilter;
+
 @EnableHystrix
 @Configuration
 public class GatewayConfiguration {
@@ -17,6 +19,7 @@ public class GatewayConfiguration {
                     .path("/personal/**")
                     .filters(f -> f.addRequestHeader("Ruteado", "personal")
                             .addResponseHeader("Routeado", "personal")
+                            .filter(new AutorizationFilter())
                             .hystrix(config -> config.setName("personal")
                                                 .setFallbackUri("forward:/personalfallback")))
                     .uri("http://localhost:8072/personal")
@@ -25,9 +28,38 @@ public class GatewayConfiguration {
                     .path("/distritales/**")
                     .filters(f -> f.addRequestHeader("Routeado", "distritales")
                           .addResponseHeader("Routeado", "personal")
+                          .filter(new AutorizationFilter())
                             .hystrix(config -> config.setName("distritales")
                                                 .setFallbackUri("forward:/distritalesfallback")))
                     .uri("http://localhost:8070/distritales"))
+            .route (p -> p
+                    .path("/cursos/**")
+                    .filters(f -> f
+                            .filter(new AutorizationFilter())
+                            .hystrix(config -> config.setName("cursos")
+                                                .setFallbackUri("forward:/cursosfallback")))
+                    .uri("http://localhost:8073/cursos"))
+            .route (p -> p
+                    .path("/inscripciones/**")
+                    .filters(f -> f
+                            .filter(new AutorizationFilter())
+                            .hystrix(config -> config.setName("inscripciones")
+                                                .setFallbackUri("forward:/inscripcionesfallback")))
+                    .uri("http://localhost:8071/inscripciones"))
+            .route (p -> p
+                    .path("/autorizaciones/**")
+                    .filters(f -> f
+                            .filter(new AutorizationFilter())
+                            .hystrix(config -> config.setName("autorizaciones")
+                                                .setFallbackUri("forward:/autorizacionesfallback")))
+                    .uri("http://localhost:8075/autorizaciones"))
+            .route (p -> p
+                    .path("/config/**")
+                    .filters(f -> f
+                            .filter(new AutorizationFilter())
+                            .hystrix(config -> config.setName("config")
+                                                .setFallbackUri("forward:/configfallback")))
+                    .uri("http://localhost:88/config"))
             .build();
     }
     
