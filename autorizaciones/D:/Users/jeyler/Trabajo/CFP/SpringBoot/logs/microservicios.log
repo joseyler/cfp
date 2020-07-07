@@ -1,0 +1,69 @@
+autorizaciones 2020-07-03 18:18:03,141 INFO [restartedMain] a.g.c.a.AutorizacionesApplication Starting AutorizacionesApplication on roman-Lenovo-G470 with PID 7082 (/home/roman/git/cfp/autorizaciones/target/classes started by roman in /home/roman/git/cfp/autorizaciones)
+autorizaciones 2020-07-03 18:18:03,161 INFO [restartedMain] a.g.c.a.AutorizacionesApplication No active profile set, falling back to default profiles: default
+autorizaciones 2020-07-03 18:18:03,379 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+autorizaciones 2020-07-03 18:18:03,379 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+autorizaciones 2020-07-03 18:18:04,624 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+autorizaciones 2020-07-03 18:18:04,712 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 74ms. Found 1 JPA repository interfaces.
+autorizaciones 2020-07-03 18:18:05,753 INFO [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer Tomcat initialized with port(s): 8075 (http)
+autorizaciones 2020-07-03 18:18:05,767 INFO [restartedMain] o.a.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-8075"]
+autorizaciones 2020-07-03 18:18:05,769 INFO [restartedMain] o.a.catalina.core.StandardService Starting service [Tomcat]
+autorizaciones 2020-07-03 18:18:05,769 INFO [restartedMain] o.a.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.34]
+autorizaciones 2020-07-03 18:18:05,940 INFO [restartedMain] o.a.c.c.C.[.[.[/autorizaciones] Initializing Spring embedded WebApplicationContext
+autorizaciones 2020-07-03 18:18:05,940 INFO [restartedMain] o.s.web.context.ContextLoader Root WebApplicationContext: initialization completed in 2560 ms
+autorizaciones 2020-07-03 18:18:06,255 INFO [restartedMain] o.h.jpa.internal.util.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
+autorizaciones 2020-07-03 18:18:06,320 INFO [restartedMain] org.hibernate.Version HHH000412: Hibernate ORM core version 5.4.15.Final
+autorizaciones 2020-07-03 18:18:06,486 INFO [restartedMain] o.h.annotations.common.Version HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+autorizaciones 2020-07-03 18:18:06,655 INFO [restartedMain] com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+autorizaciones 2020-07-03 18:18:07,527 INFO [restartedMain] com.zaxxer.hikari.HikariDataSource HikariPool-1 - Start completed.
+autorizaciones 2020-07-03 18:18:07,559 INFO [restartedMain] org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+autorizaciones 2020-07-03 18:18:08,693 INFO [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+autorizaciones 2020-07-03 18:18:08,708 INFO [restartedMain] o.s.o.j.LocalContainerEntityManagerFactoryBean Initialized JPA EntityManagerFactory for persistence unit 'default'
+autorizaciones 2020-07-03 18:18:08,777 WARN [restartedMain] o.s.b.d.a.OptionalLiveReloadServer Unable to start LiveReload server
+autorizaciones 2020-07-03 18:18:09,403 WARN [restartedMain] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+autorizaciones 2020-07-03 18:18:09,566 INFO [restartedMain] o.s.s.c.ThreadPoolTaskExecutor Initializing ExecutorService 'applicationTaskExecutor'
+autorizaciones 2020-07-03 18:18:09,970 INFO [restartedMain] o.a.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["http-nio-8075"]
+autorizaciones 2020-07-03 18:18:10,003 INFO [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer Tomcat started on port(s): 8075 (http) with context path '/autorizaciones'
+autorizaciones 2020-07-03 18:18:10,010 INFO [restartedMain] a.g.c.a.AutorizacionesApplication Started AutorizacionesApplication in 7.573 seconds (JVM running for 9.389)
+autorizaciones 2020-07-03 18:42:51,940 INFO [RMI TCP Connection(4)-127.0.0.1] o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin Application shutdown requested.
+autorizaciones 2020-07-03 18:42:51,946 INFO [RMI TCP Connection(4)-127.0.0.1] o.s.s.c.ThreadPoolTaskExecutor Shutting down ExecutorService 'applicationTaskExecutor'
+autorizaciones 2020-07-03 18:42:51,948 INFO [RMI TCP Connection(4)-127.0.0.1] o.s.o.j.LocalContainerEntityManagerFactoryBean Closing JPA EntityManagerFactory for persistence unit 'default'
+autorizaciones 2020-07-03 18:42:51,956 INFO [RMI TCP Connection(4)-127.0.0.1] com.zaxxer.hikari.HikariDataSource HikariPool-1 - Shutdown initiated...
+autorizaciones 2020-07-03 18:42:51,967 INFO [RMI TCP Connection(4)-127.0.0.1] com.zaxxer.hikari.HikariDataSource HikariPool-1 - Shutdown completed.
+autorizaciones 2020-07-03 18:44:02,589 INFO [restartedMain] a.g.c.a.AutorizacionesApplication Starting AutorizacionesApplication on roman-Lenovo-G470 with PID 8360 (/home/roman/git/cfp/autorizaciones/target/classes started by roman in /home/roman/git/cfp/autorizaciones)
+autorizaciones 2020-07-03 18:44:02,597 INFO [restartedMain] a.g.c.a.AutorizacionesApplication No active profile set, falling back to default profiles: default
+autorizaciones 2020-07-03 18:44:02,695 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+autorizaciones 2020-07-03 18:44:02,696 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+autorizaciones 2020-07-03 18:44:03,817 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+autorizaciones 2020-07-03 18:44:03,905 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 76ms. Found 1 JPA repository interfaces.
+autorizaciones 2020-07-03 18:44:04,932 INFO [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer Tomcat initialized with port(s): 8075 (http)
+autorizaciones 2020-07-03 18:44:04,946 INFO [restartedMain] o.a.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-8075"]
+autorizaciones 2020-07-03 18:44:04,947 INFO [restartedMain] o.a.catalina.core.StandardService Starting service [Tomcat]
+autorizaciones 2020-07-03 18:44:04,947 INFO [restartedMain] o.a.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.34]
+autorizaciones 2020-07-03 18:44:05,062 INFO [restartedMain] o.a.c.c.C.[.[.[/autorizaciones] Initializing Spring embedded WebApplicationContext
+autorizaciones 2020-07-03 18:44:05,062 INFO [restartedMain] o.s.web.context.ContextLoader Root WebApplicationContext: initialization completed in 2366 ms
+autorizaciones 2020-07-03 18:44:05,330 INFO [restartedMain] o.h.jpa.internal.util.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
+autorizaciones 2020-07-03 18:44:05,378 INFO [restartedMain] org.hibernate.Version HHH000412: Hibernate ORM core version 5.4.15.Final
+autorizaciones 2020-07-03 18:44:05,511 INFO [restartedMain] o.h.annotations.common.Version HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+autorizaciones 2020-07-03 18:44:05,709 INFO [restartedMain] com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+autorizaciones 2020-07-03 18:44:06,498 INFO [restartedMain] com.zaxxer.hikari.HikariDataSource HikariPool-1 - Start completed.
+autorizaciones 2020-07-03 18:44:06,521 INFO [restartedMain] org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+autorizaciones 2020-07-03 18:44:08,197 INFO [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+autorizaciones 2020-07-03 18:44:08,210 INFO [restartedMain] o.s.o.j.LocalContainerEntityManagerFactoryBean Initialized JPA EntityManagerFactory for persistence unit 'default'
+autorizaciones 2020-07-03 18:44:08,274 WARN [restartedMain] o.s.b.d.a.OptionalLiveReloadServer Unable to start LiveReload server
+autorizaciones 2020-07-03 18:44:08,805 WARN [restartedMain] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+autorizaciones 2020-07-03 18:44:08,979 INFO [restartedMain] o.s.s.c.ThreadPoolTaskExecutor Initializing ExecutorService 'applicationTaskExecutor'
+autorizaciones 2020-07-03 18:44:09,362 INFO [restartedMain] o.a.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["http-nio-8075"]
+autorizaciones 2020-07-03 18:44:09,389 INFO [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer Tomcat started on port(s): 8075 (http) with context path '/autorizaciones'
+autorizaciones 2020-07-03 18:44:09,397 INFO [restartedMain] a.g.c.a.AutorizacionesApplication Started AutorizacionesApplication in 7.462 seconds (JVM running for 9.054)
+autorizaciones 2020-07-03 18:45:11,539 INFO [http-nio-8075-exec-1] o.a.c.c.C.[.[.[/autorizaciones] Initializing Spring DispatcherServlet 'dispatcherServlet'
+autorizaciones 2020-07-03 18:45:11,541 INFO [http-nio-8075-exec-1] o.s.web.servlet.DispatcherServlet Initializing Servlet 'dispatcherServlet'
+autorizaciones 2020-07-03 18:45:11,561 INFO [http-nio-8075-exec-1] o.s.web.servlet.DispatcherServlet Completed initialization in 20 ms
+autorizaciones 2020-07-03 18:45:11,825 INFO [http-nio-8075-exec-1] a.g.c.a.s.AutorizacionesService Validando usuario jeyler
+autorizaciones 2020-07-03 19:14:06,067 WARN [http-nio-8075-exec-7] a.g.c.a.s.AutorizacionesService JWT signature does not match locally computed signature. JWT validity cannot be asserted and should not be trusted.
+autorizaciones 2020-07-03 19:14:06,068 WARN [http-nio-8075-exec-7] ar.gob.cfp.commons.CfpRestController El token no es valido
+autorizaciones 2020-07-03 19:14:24,670 INFO [http-nio-8075-exec-10] a.g.c.a.s.AutorizacionesService Validando usuario jeyler
+autorizaciones 2020-07-03 19:35:27,312 INFO [RMI TCP Connection(4)-127.0.0.1] o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin Application shutdown requested.
+autorizaciones 2020-07-03 19:35:27,321 INFO [RMI TCP Connection(4)-127.0.0.1] o.s.s.c.ThreadPoolTaskExecutor Shutting down ExecutorService 'applicationTaskExecutor'
+autorizaciones 2020-07-03 19:35:27,324 INFO [RMI TCP Connection(4)-127.0.0.1] o.s.o.j.LocalContainerEntityManagerFactoryBean Closing JPA EntityManagerFactory for persistence unit 'default'
+autorizaciones 2020-07-03 19:35:27,330 INFO [RMI TCP Connection(4)-127.0.0.1] com.zaxxer.hikari.HikariDataSource HikariPool-1 - Shutdown initiated...
+autorizaciones 2020-07-03 19:35:27,343 INFO [RMI TCP Connection(4)-127.0.0.1] com.zaxxer.hikari.HikariDataSource HikariPool-1 - Shutdown completed.
