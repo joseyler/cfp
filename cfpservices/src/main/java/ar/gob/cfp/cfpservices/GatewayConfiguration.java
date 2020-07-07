@@ -32,6 +32,34 @@ public class GatewayConfiguration {
                             .hystrix(config -> config.setName("distritales")
                                                 .setFallbackUri("forward:/distritalesfallback")))
                     .uri("http://localhost:8070/distritales"))
+            .route (p -> p
+                    .path("/cursos/**")
+                    .filters(f -> f
+                            .filter(new AutorizationFilter())
+                            .hystrix(config -> config.setName("cursos")
+                                                .setFallbackUri("forward:/cursosfallback")))
+                    .uri("http://localhost:8073/cursos"))
+            .route (p -> p
+                    .path("/inscripciones/**")
+                    .filters(f -> f
+                            .filter(new AutorizationFilter())
+                            .hystrix(config -> config.setName("inscripciones")
+                                                .setFallbackUri("forward:/inscripcionesfallback")))
+                    .uri("http://localhost:8071/inscripciones"))
+            .route (p -> p
+                    .path("/autorizaciones/**")
+                    .filters(f -> f
+                            .filter(new AutorizationFilter())
+                            .hystrix(config -> config.setName("autorizaciones")
+                                                .setFallbackUri("forward:/autorizacionesfallback")))
+                    .uri("http://localhost:8075/autorizaciones"))
+            .route (p -> p
+                    .path("/config/**")
+                    .filters(f -> f
+                            .filter(new AutorizationFilter())
+                            .hystrix(config -> config.setName("config")
+                                                .setFallbackUri("forward:/configfallback")))
+                    .uri("http://localhost:88/config"))
             .build();
     }
     

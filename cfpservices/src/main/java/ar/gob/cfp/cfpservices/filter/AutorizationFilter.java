@@ -24,7 +24,8 @@ public class AutorizationFilter implements GatewayFilter {
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
         
-        if (exchange.getRequest().getMethod().equals(HttpMethod.GET)) {
+        if (exchange.getRequest().getMethod().equals(HttpMethod.GET) ||
+                exchange.getRequest().getPath().toString().contains("autorizaciones")) {
            return chain.filter(exchange);
         } else {
             //que exista y sea valido un token
