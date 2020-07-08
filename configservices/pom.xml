@@ -10,7 +10,7 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>ar.gob.cfp</groupId>
-	<artifactId>cfpservices</artifactId>
+	<artifactId>configservices</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>cfpservices</name>
 	<description>CFP Services Online CFP</description>
@@ -38,18 +38,10 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-		<dependency>
-		      <groupId>org.springframework.cloud</groupId>
-		      <artifactId>spring-cloud-starter-gateway</artifactId>
-		    </dependency>
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-actuator</artifactId>
-		</dependency>
+		 <dependency>
+	            <groupId>org.springframework.cloud</groupId>
+	            <artifactId>spring-cloud-config-server</artifactId>
+	        </dependency>
 	</dependencies>
 	<dependencyManagement>
 		<dependencies>
