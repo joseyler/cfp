@@ -11,16 +11,16 @@ import ar.gob.cfp.commons.services.AutorizacionesService;
 @Configuration
 public class FiltrosConfigurations {
 	
-	@Autowired 
-	AutorizacionesService authServices;
-	
-	@Bean
-	public FilterRegistrationBean<FiltroMetodosPrivados> filtroMetodosPrivados() {
-		FilterRegistrationBean<FiltroMetodosPrivados> filtroReg = new FilterRegistrationBean<FiltroMetodosPrivados>();
-		filtroReg.setFilter(new FiltroMetodosPrivados(authServices));
-		filtroReg.addUrlPatterns("/v1/profesores/*","/otraUrl");
-		filtroReg.addUrlPatterns("/otromas");
-		return filtroReg;
-	}
+//	@Autowired 
+//	AutorizacionesService authServices;
+//	
+//	@Bean
+//	public FilterRegistrationBean<FiltroMetodosPrivados> filtroMetodosPrivados() {
+//		FilterRegistrationBean<FiltroMetodosPrivados> filtroReg = new FilterRegistrationBean<FiltroMetodosPrivados>();
+//		filtroReg.setFilter(new FiltroMetodosPrivados(authServices));
+//		filtroReg.addUrlPatterns("/v1/profesores/*","/otraUrl");
+//		filtroReg.addUrlPatterns("/otromas");
+//		return filtroReg;
+//	}
 
 }
