@@ -15,11 +15,21 @@ import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.server.ServerWebExchange;
 
+import com.netflix.appinfo.InstanceInfo;
+import com.netflix.discovery.EurekaClient;
+import com.netflix.discovery.shared.Application;
+
 import ar.gob.cfp.cfpservices.modelo.TokenContainer;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 public class AutorizationFilter implements GatewayFilter {
+    
+    EurekaClient eurekaClient;
+    
+    public AutorizationFilter(EurekaClient eurekaClient) {
+        this.eurekaClient = eurekaClient;
+    }
 
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
@@ -56,8 +66,10 @@ public class AutorizationFilter implements GatewayFilter {
     
     public String esTokenValido(String token) {
         try {
+            Application application = eurekaClient.getApplication("autorizaciones");
+            InstanceInfo instanceInfo = application.getInstances().get(0);
             RestTemplate rs = new RestTemplate();
-            String url = "http://localhost:8075/autorizaciones/v1/validar";
+            String url = "http://"+ instanceInfo.getIPAddr() +":" + instanceInfo.getPort() + "/autorizaciones/v1/validar";
             TokenContainer auth = new TokenContainer();
             auth.setToken(token);
             HttpEntity<TokenContainer> entidadHttp = new HttpEntity<TokenContainer>(auth);
