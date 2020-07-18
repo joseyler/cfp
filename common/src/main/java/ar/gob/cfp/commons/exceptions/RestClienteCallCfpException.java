@@ -21,7 +21,4 @@ public class RestClienteCallCfpException extends CfpException {
         return statusCode;
     }
     
-    
-    
-
 }

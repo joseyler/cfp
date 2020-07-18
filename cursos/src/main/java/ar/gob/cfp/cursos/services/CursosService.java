@@ -4,11 +4,16 @@ import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.HttpStatusCodeException;
 import org.springframework.web.client.RestTemplate;
+
+import com.netflix.appinfo.InstanceInfo;
+import com.netflix.discovery.EurekaClient;
+import com.netflix.discovery.shared.Application;
 
 import ar.gob.cfp.commons.exceptions.CfpException;
 import ar.gob.cfp.commons.exceptions.RestClienteCallCfpException;
@@ -21,6 +26,9 @@ import ar.gob.cfp.cursos.exceptions.InstitucionInexistenteException;
 @Service
 public class CursosService {
 
+	@Autowired
+	EurekaClient eureka;
+	
 	private CursosDao cursosDao;
 	
 	private static final Logger LOGGER = LoggerFactory.getLogger(CursosService.class);
@@ -108,8 +116,13 @@ public class CursosService {
 	////////////////////////////////////////////////////////////////////////////////////////////////
 	private Institucion existeInstitucion(Integer id) throws CfpException {
 		try {
+			Application application = eureka.getApplication("distritales");
+            InstanceInfo instanceInfo = application.getInstances().get(0);
+            
 			RestTemplate rs = new RestTemplate();
-			String url = "http://localhost:8070/distritales/v1/instituciones/" + id;
+			
+			String url = "http://"+ instanceInfo.getIPAddr() +":" + instanceInfo.getPort() + "/distritales/v1/instituciones/" + id;
+			
 			HttpEntity<Object> entidadHttp = new HttpEntity<Object>(null);
 			Institucion institucion = rs.exchange(url, HttpMethod.GET, entidadHttp, Institucion.class).getBody();
 			
@@ -131,8 +144,13 @@ public class CursosService {
 /////////////////////////////////////////////////////////////////////////////////////////////////
 	private Profesor buscarProfesor(Integer id) throws CfpException{
 		try {	
+			Application application = eureka.getApplication("personal");
+            InstanceInfo instanceInfo = application.getInstances().get(0);
+			
 			RestTemplate rs = new RestTemplate();
-			String url = "http://localhost:8072/personal/v1/profesores/" + id;
+			
+			String url = "http://"+ instanceInfo.getIPAddr() +":" + instanceInfo.getPort() + "/personal/v1/profesores/" + id;
+		
 			HttpEntity<Object> entidadHttp = new HttpEntity<Object>(null);
 			Profesor prof = rs.exchange(url, HttpMethod.GET, entidadHttp, Profesor.class).getBody();
 			

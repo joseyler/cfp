@@ -60,10 +60,6 @@ public class InscripcionesService {
         }
     }
 
-    /*
-     * for (Inscripcion inscripcion : inscripciones) { Inscripto inscripto = inscDao.getInscriptoById(inscripcion.getInscripto().getId()); inscripcion.setInscripto(inscripto); Curso curso
-     * =cursosComponent.getCurso(inscripcion.getCurso().getId()); if (curso != null) { inscripcion.setCurso(curso); } } return inscripciones; }
-     */
     public Inscripcion getInscripcionById(Integer idInscripto) throws CfpException {
         try {
             return inscDao.getInscripcionById(idInscripto);
@@ -75,10 +71,6 @@ public class InscripcionesService {
         }
     }
 
-    /*
-     * Inscripcion inscripcionById = inscDao.getInscripcionById(idInscripto); Inscripto inscripto = inscDao.getInscriptoById(inscripcionById.getInscripto().getId());
-     * inscripcionById.setInscripto(inscripto); Curso curso = getCurso(inscripcionById.getCurso().getId()); if (curso != null) { inscripcionById.setCurso(curso); } return inscripcionById; }
-     */
     public Curso getCurso(Integer id) throws CfpException {
         try {
             RestTemplate rs = new RestTemplate();

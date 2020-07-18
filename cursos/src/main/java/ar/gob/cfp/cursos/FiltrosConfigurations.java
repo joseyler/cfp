@@ -11,7 +11,7 @@ import ar.gob.cfp.commons.services.AutorizacionesService;
 @Configuration
 public class FiltrosConfigurations {
 	
-	@Autowired 
+	/*@Autowired 
 	AutorizacionesService authServices;
 	
 	@Bean
@@ -20,6 +20,6 @@ public class FiltrosConfigurations {
 		filtroReg.setFilter(new FiltroMetodosPrivados(authServices));
 		filtroReg.addUrlPatterns("/v1/cursos/*");
 		return filtroReg;
-	}
+	}*/
 
 }

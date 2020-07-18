@@ -34,6 +34,7 @@ public class ProfesorDao {
     // return new ArrayList<Profesor>();
     // }
 
+
     public List<Profesor> getAll() {
         List<ProfesorEntity> resultList = repo.findAll();
         return ProfesorMapper.mapModelo(resultList);

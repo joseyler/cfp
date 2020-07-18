@@ -1,0 +1,626 @@
+Cursos 2020-07-03 19:26:24,360 ERROR [http-nio-8073-exec-7] ar.gob.cfp.commons.CfpRestController Ha ocurrido un error obteniendo  cursos del a institucion 2. Mensaje: I/O error on GET request for "http://localhost:8070/distritales/v1/instituciones/2": Conexión rehusada (Connection refused); nested exception is java.net.ConnectException: Conexión rehusada (Connection refused)
+ar.gob.cfp.commons.exceptions.CfpException: Ha ocurrido un error obteniendo  cursos del a institucion 2. Mensaje: I/O error on GET request for "http://localhost:8070/distritales/v1/instituciones/2": Conexión rehusada (Connection refused); nested exception is java.net.ConnectException: Conexión rehusada (Connection refused)
+	at ar.gob.cfp.cursos.services.CursosService.buscarCurso(CursosService.java:53)
+	at ar.gob.cfp.cursos.controllers.CursosController.buscarCurso(CursosController.java:36)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:879)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at ar.gob.cfp.commons.filtros.FiltroMetodosPrivados.doFilter(FiltroMetodosPrivados.java:30)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Cursos 2020-07-03 19:27:30,340 INFO [Thread-45] o.s.s.c.ThreadPoolTaskExecutor Shutting down ExecutorService 'applicationTaskExecutor'
+Cursos 2020-07-03 19:27:30,343 INFO [Thread-45] o.s.o.j.LocalContainerEntityManagerFactoryBean Closing JPA EntityManagerFactory for persistence unit 'default'
+Cursos 2020-07-03 19:27:30,345 INFO [Thread-45] com.zaxxer.hikari.HikariDataSource HikariPool-8 - Shutdown initiated...
+Cursos 2020-07-03 19:27:30,356 INFO [Thread-45] com.zaxxer.hikari.HikariDataSource HikariPool-8 - Shutdown completed.
+Cursos 2020-07-03 19:27:30,809 INFO [restartedMain] ar.gob.cfp.cursos.CursosApplication Starting CursosApplication on roman-Lenovo-G470 with PID 8177 (/home/roman/git/cfp/cursos/target/classes started by roman in /home/roman/git/cfp/cursos)
+Cursos 2020-07-03 19:27:30,810 INFO [restartedMain] ar.gob.cfp.cursos.CursosApplication No active profile set, falling back to default profiles: default
+Cursos 2020-07-03 19:27:31,362 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+Cursos 2020-07-03 19:27:31,400 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 36ms. Found 1 JPA repository interfaces.
+Cursos 2020-07-03 19:27:31,723 INFO [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer Tomcat initialized with port(s): 8073 (http)
+Cursos 2020-07-03 19:27:31,725 INFO [restartedMain] o.a.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-8073"]
+Cursos 2020-07-03 19:27:31,726 INFO [restartedMain] o.a.catalina.core.StandardService Starting service [Tomcat]
+Cursos 2020-07-03 19:27:31,726 INFO [restartedMain] o.a.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.34]
+Cursos 2020-07-03 19:27:31,746 INFO [restartedMain] o.a.c.c.C.[.[localhost].[/cursos] Initializing Spring embedded WebApplicationContext
+Cursos 2020-07-03 19:27:31,746 INFO [restartedMain] o.s.web.context.ContextLoader Root WebApplicationContext: initialization completed in 926 ms
+Cursos 2020-07-03 19:27:31,937 INFO [restartedMain] o.h.jpa.internal.util.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
+Cursos 2020-07-03 19:27:31,950 INFO [restartedMain] com.zaxxer.hikari.HikariDataSource HikariPool-9 - Starting...
+Cursos 2020-07-03 19:27:32,324 INFO [restartedMain] com.zaxxer.hikari.HikariDataSource HikariPool-9 - Start completed.
+Cursos 2020-07-03 19:27:32,325 INFO [restartedMain] org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+Cursos 2020-07-03 19:27:33,277 INFO [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+Cursos 2020-07-03 19:27:33,278 INFO [restartedMain] o.s.o.j.LocalContainerEntityManagerFactoryBean Initialized JPA EntityManagerFactory for persistence unit 'default'
+Cursos 2020-07-03 19:27:33,298 INFO [restartedMain] o.s.b.d.a.OptionalLiveReloadServer LiveReload server is running on port 35729
+Cursos 2020-07-03 19:27:33,419 WARN [restartedMain] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+Cursos 2020-07-03 19:27:33,544 INFO [restartedMain] o.s.s.c.ThreadPoolTaskExecutor Initializing ExecutorService 'applicationTaskExecutor'
+Cursos 2020-07-03 19:27:33,792 INFO [restartedMain] o.a.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["http-nio-8073"]
+Cursos 2020-07-03 19:27:33,870 INFO [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer Tomcat started on port(s): 8073 (http) with context path '/cursos'
+Cursos 2020-07-03 19:27:33,871 INFO [restartedMain] ar.gob.cfp.cursos.CursosApplication Started CursosApplication in 3.182 seconds (JVM running for 2671.19)
+Cursos 2020-07-03 19:27:33,873 INFO [restartedMain] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener Condition evaluation unchanged
+Cursos 2020-07-03 19:29:21,586 INFO [Thread-51] o.s.s.c.ThreadPoolTaskExecutor Shutting down ExecutorService 'applicationTaskExecutor'
+Cursos 2020-07-03 19:29:21,587 INFO [Thread-51] o.s.o.j.LocalContainerEntityManagerFactoryBean Closing JPA EntityManagerFactory for persistence unit 'default'
+Cursos 2020-07-03 19:29:21,589 INFO [Thread-51] com.zaxxer.hikari.HikariDataSource HikariPool-9 - Shutdown initiated...
+Cursos 2020-07-03 19:29:21,594 INFO [Thread-51] com.zaxxer.hikari.HikariDataSource HikariPool-9 - Shutdown completed.
+Cursos 2020-07-03 19:29:21,768 INFO [restartedMain] ar.gob.cfp.cursos.CursosApplication Starting CursosApplication on roman-Lenovo-G470 with PID 8177 (/home/roman/git/cfp/cursos/target/classes started by roman in /home/roman/git/cfp/cursos)
+Cursos 2020-07-03 19:29:21,768 INFO [restartedMain] ar.gob.cfp.cursos.CursosApplication No active profile set, falling back to default profiles: default
+Cursos 2020-07-03 19:29:22,174 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+Cursos 2020-07-03 19:29:22,189 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 14ms. Found 1 JPA repository interfaces.
+Cursos 2020-07-03 19:29:22,378 INFO [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer Tomcat initialized with port(s): 8073 (http)
+Cursos 2020-07-03 19:29:22,379 INFO [restartedMain] o.a.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-8073"]
+Cursos 2020-07-03 19:29:22,380 INFO [restartedMain] o.a.catalina.core.StandardService Starting service [Tomcat]
+Cursos 2020-07-03 19:29:22,380 INFO [restartedMain] o.a.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.34]
+Cursos 2020-07-03 19:29:22,393 INFO [restartedMain] o.a.c.c.C.[.[localhost].[/cursos] Initializing Spring embedded WebApplicationContext
+Cursos 2020-07-03 19:29:22,393 INFO [restartedMain] o.s.web.context.ContextLoader Root WebApplicationContext: initialization completed in 620 ms
+Cursos 2020-07-03 19:29:22,468 INFO [restartedMain] o.h.jpa.internal.util.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
+Cursos 2020-07-03 19:29:22,477 INFO [restartedMain] com.zaxxer.hikari.HikariDataSource HikariPool-10 - Starting...
+Cursos 2020-07-03 19:29:22,762 INFO [restartedMain] com.zaxxer.hikari.HikariDataSource HikariPool-10 - Start completed.
+Cursos 2020-07-03 19:29:22,763 INFO [restartedMain] org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+Cursos 2020-07-03 19:29:23,380 INFO [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+Cursos 2020-07-03 19:29:23,380 INFO [restartedMain] o.s.o.j.LocalContainerEntityManagerFactoryBean Initialized JPA EntityManagerFactory for persistence unit 'default'
+Cursos 2020-07-03 19:29:23,407 INFO [restartedMain] o.s.b.d.a.OptionalLiveReloadServer LiveReload server is running on port 35729
+Cursos 2020-07-03 19:29:23,508 WARN [restartedMain] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+Cursos 2020-07-03 19:29:23,553 INFO [restartedMain] o.s.s.c.ThreadPoolTaskExecutor Initializing ExecutorService 'applicationTaskExecutor'
+Cursos 2020-07-03 19:29:23,729 INFO [restartedMain] o.a.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["http-nio-8073"]
+Cursos 2020-07-03 19:29:23,732 INFO [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer Tomcat started on port(s): 8073 (http) with context path '/cursos'
+Cursos 2020-07-03 19:29:23,733 INFO [restartedMain] ar.gob.cfp.cursos.CursosApplication Started CursosApplication in 2.012 seconds (JVM running for 2781.052)
+Cursos 2020-07-03 19:29:23,735 INFO [restartedMain] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener Condition evaluation unchanged
+Cursos 2020-07-03 19:33:04,026 INFO [Thread-57] o.s.s.c.ThreadPoolTaskExecutor Shutting down ExecutorService 'applicationTaskExecutor'
+Cursos 2020-07-03 19:33:04,028 INFO [Thread-57] o.s.o.j.LocalContainerEntityManagerFactoryBean Closing JPA EntityManagerFactory for persistence unit 'default'
+Cursos 2020-07-03 19:33:04,030 INFO [Thread-57] com.zaxxer.hikari.HikariDataSource HikariPool-10 - Shutdown initiated...
+Cursos 2020-07-03 19:33:04,037 INFO [Thread-57] com.zaxxer.hikari.HikariDataSource HikariPool-10 - Shutdown completed.
+Cursos 2020-07-03 19:33:04,235 INFO [restartedMain] ar.gob.cfp.cursos.CursosApplication Starting CursosApplication on roman-Lenovo-G470 with PID 8177 (/home/roman/git/cfp/cursos/target/classes started by roman in /home/roman/git/cfp/cursos)
+Cursos 2020-07-03 19:33:04,236 INFO [restartedMain] ar.gob.cfp.cursos.CursosApplication No active profile set, falling back to default profiles: default
+Cursos 2020-07-03 19:33:04,588 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+Cursos 2020-07-03 19:33:04,604 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 16ms. Found 1 JPA repository interfaces.
+Cursos 2020-07-03 19:33:04,800 INFO [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer Tomcat initialized with port(s): 8073 (http)
+Cursos 2020-07-03 19:33:04,802 INFO [restartedMain] o.a.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-8073"]
+Cursos 2020-07-03 19:33:04,802 INFO [restartedMain] o.a.catalina.core.StandardService Starting service [Tomcat]
+Cursos 2020-07-03 19:33:04,802 INFO [restartedMain] o.a.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.34]
+Cursos 2020-07-03 19:33:04,816 INFO [restartedMain] o.a.c.c.C.[.[localhost].[/cursos] Initializing Spring embedded WebApplicationContext
+Cursos 2020-07-03 19:33:04,816 INFO [restartedMain] o.s.web.context.ContextLoader Root WebApplicationContext: initialization completed in 575 ms
+Cursos 2020-07-03 19:33:04,892 INFO [restartedMain] o.h.jpa.internal.util.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
+Cursos 2020-07-03 19:33:04,903 INFO [restartedMain] com.zaxxer.hikari.HikariDataSource HikariPool-11 - Starting...
+Cursos 2020-07-03 19:33:05,216 INFO [restartedMain] com.zaxxer.hikari.HikariDataSource HikariPool-11 - Start completed.
+Cursos 2020-07-03 19:33:05,217 INFO [restartedMain] org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+Cursos 2020-07-03 19:33:06,103 INFO [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+Cursos 2020-07-03 19:33:06,103 INFO [restartedMain] o.s.o.j.LocalContainerEntityManagerFactoryBean Initialized JPA EntityManagerFactory for persistence unit 'default'
+Cursos 2020-07-03 19:33:06,141 INFO [restartedMain] o.s.b.d.a.OptionalLiveReloadServer LiveReload server is running on port 35729
+Cursos 2020-07-03 19:33:06,271 WARN [restartedMain] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+Cursos 2020-07-03 19:33:06,342 INFO [restartedMain] o.s.s.c.ThreadPoolTaskExecutor Initializing ExecutorService 'applicationTaskExecutor'
+Cursos 2020-07-03 19:33:06,510 INFO [restartedMain] o.a.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["http-nio-8073"]
+Cursos 2020-07-03 19:33:06,524 INFO [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer Tomcat started on port(s): 8073 (http) with context path '/cursos'
+Cursos 2020-07-03 19:33:06,525 INFO [restartedMain] ar.gob.cfp.cursos.CursosApplication Started CursosApplication in 2.335 seconds (JVM running for 3003.845)
+Cursos 2020-07-03 19:33:06,527 INFO [restartedMain] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener Condition evaluation unchanged
+Cursos 2020-07-03 19:33:17,953 INFO [Thread-63] o.s.s.c.ThreadPoolTaskExecutor Shutting down ExecutorService 'applicationTaskExecutor'
+Cursos 2020-07-03 19:33:17,956 INFO [Thread-63] o.s.o.j.LocalContainerEntityManagerFactoryBean Closing JPA EntityManagerFactory for persistence unit 'default'
+Cursos 2020-07-03 19:33:17,961 INFO [Thread-63] com.zaxxer.hikari.HikariDataSource HikariPool-11 - Shutdown initiated...
+Cursos 2020-07-03 19:33:17,965 INFO [Thread-63] com.zaxxer.hikari.HikariDataSource HikariPool-11 - Shutdown completed.
+Cursos 2020-07-03 19:33:18,157 INFO [restartedMain] ar.gob.cfp.cursos.CursosApplication Starting CursosApplication on roman-Lenovo-G470 with PID 8177 (/home/roman/git/cfp/cursos/target/classes started by roman in /home/roman/git/cfp/cursos)
+Cursos 2020-07-03 19:33:18,158 INFO [restartedMain] ar.gob.cfp.cursos.CursosApplication No active profile set, falling back to default profiles: default
+Cursos 2020-07-03 19:33:18,514 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+Cursos 2020-07-03 19:33:18,534 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 20ms. Found 1 JPA repository interfaces.
+Cursos 2020-07-03 19:33:18,743 INFO [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer Tomcat initialized with port(s): 8073 (http)
+Cursos 2020-07-03 19:33:18,744 INFO [restartedMain] o.a.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-8073"]
+Cursos 2020-07-03 19:33:18,745 INFO [restartedMain] o.a.catalina.core.StandardService Starting service [Tomcat]
+Cursos 2020-07-03 19:33:18,745 INFO [restartedMain] o.a.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.34]
+Cursos 2020-07-03 19:33:18,760 INFO [restartedMain] o.a.c.c.C.[.[localhost].[/cursos] Initializing Spring embedded WebApplicationContext
+Cursos 2020-07-03 19:33:18,760 INFO [restartedMain] o.s.web.context.ContextLoader Root WebApplicationContext: initialization completed in 597 ms
+Cursos 2020-07-03 19:33:18,838 INFO [restartedMain] o.h.jpa.internal.util.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
+Cursos 2020-07-03 19:33:18,845 INFO [restartedMain] com.zaxxer.hikari.HikariDataSource HikariPool-12 - Starting...
+Cursos 2020-07-03 19:33:19,214 INFO [restartedMain] com.zaxxer.hikari.HikariDataSource HikariPool-12 - Start completed.
+Cursos 2020-07-03 19:33:19,215 INFO [restartedMain] org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+Cursos 2020-07-03 19:33:19,789 INFO [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+Cursos 2020-07-03 19:33:19,790 INFO [restartedMain] o.s.o.j.LocalContainerEntityManagerFactoryBean Initialized JPA EntityManagerFactory for persistence unit 'default'
+Cursos 2020-07-03 19:33:19,816 INFO [restartedMain] o.s.b.d.a.OptionalLiveReloadServer LiveReload server is running on port 35729
+Cursos 2020-07-03 19:33:19,904 WARN [restartedMain] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+Cursos 2020-07-03 19:33:19,946 INFO [restartedMain] o.s.s.c.ThreadPoolTaskExecutor Initializing ExecutorService 'applicationTaskExecutor'
+Cursos 2020-07-03 19:33:20,077 INFO [restartedMain] o.a.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["http-nio-8073"]
+Cursos 2020-07-03 19:33:20,081 INFO [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer Tomcat started on port(s): 8073 (http) with context path '/cursos'
+Cursos 2020-07-03 19:33:20,083 INFO [restartedMain] ar.gob.cfp.cursos.CursosApplication Started CursosApplication in 1.968 seconds (JVM running for 3017.402)
+Cursos 2020-07-03 19:33:20,085 INFO [restartedMain] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener Condition evaluation unchanged
+Cursos 2020-07-03 19:33:23,907 INFO [http-nio-8073-exec-2] o.a.c.c.C.[.[localhost].[/cursos] Initializing Spring DispatcherServlet 'dispatcherServlet'
+Cursos 2020-07-03 19:33:23,914 INFO [http-nio-8073-exec-2] o.s.web.servlet.DispatcherServlet Initializing Servlet 'dispatcherServlet'
+Cursos 2020-07-03 19:33:23,925 INFO [http-nio-8073-exec-2] o.s.web.servlet.DispatcherServlet Completed initialization in 9 ms
+Cursos 2020-07-03 19:33:23,968 ERROR [http-nio-8073-exec-2] a.g.c.cursos.services.CursosService Error al conectarse a la API instituciones... 
+org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8070/distritales/v1/instituciones/2": Conexión rehusada (Connection refused); nested exception is java.net.ConnectException: Conexión rehusada (Connection refused)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:748)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:674)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:583)
+	at ar.gob.cfp.cursos.services.CursosService.existeInstitucion(CursosService.java:114)
+	at ar.gob.cfp.cursos.services.CursosService.buscarCurso(CursosService.java:39)
+	at ar.gob.cfp.cursos.controllers.CursosController.buscarCurso(CursosController.java:36)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:879)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at ar.gob.cfp.commons.filtros.FiltroMetodosPrivados.doFilter(FiltroMetodosPrivados.java:30)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: java.net.ConnectException: Conexión rehusada (Connection refused)
+	at java.base/java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:399)
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:242)
+	at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:224)
+	at java.base/java.net.Socket.connect(Socket.java:609)
+	at java.base/java.net.Socket.connect(Socket.java:558)
+	at java.base/sun.net.NetworkClient.doConnect(NetworkClient.java:182)
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:474)
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:569)
+	at java.base/sun.net.www.http.HttpClient.<init>(HttpClient.java:242)
+	at java.base/sun.net.www.http.HttpClient.New(HttpClient.java:341)
+	at java.base/sun.net.www.http.HttpClient.New(HttpClient.java:362)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1248)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1187)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1081)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:1015)
+	at org.springframework.http.client.SimpleBufferingClientHttpRequest.executeInternal(SimpleBufferingClientHttpRequest.java:76)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:53)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:739)
+	... 58 common frames omitted
+Cursos 2020-07-03 19:33:23,972 ERROR [http-nio-8073-exec-2] a.g.c.cursos.services.CursosService ERROR para Nosotros...
+ar.gob.cfp.commons.exceptions.CfpException: Error Inesperado buscando InstitucionI/O error on GET request for "http://localhost:8070/distritales/v1/instituciones/2": Conexión rehusada (Connection refused); nested exception is java.net.ConnectException: Conexión rehusada (Connection refused)
+	at ar.gob.cfp.cursos.services.CursosService.existeInstitucion(CursosService.java:128)
+	at ar.gob.cfp.cursos.services.CursosService.buscarCurso(CursosService.java:39)
+	at ar.gob.cfp.cursos.controllers.CursosController.buscarCurso(CursosController.java:36)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:879)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at ar.gob.cfp.commons.filtros.FiltroMetodosPrivados.doFilter(FiltroMetodosPrivados.java:30)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Cursos 2020-07-03 19:33:23,974 ERROR [http-nio-8073-exec-2] ar.gob.cfp.commons.CfpRestController Ha ocurrido un error obteniendo  cursos del a institucion 2. Mensaje: Error Inesperado buscando InstitucionI/O error on GET request for "http://localhost:8070/distritales/v1/instituciones/2": Conexión rehusada (Connection refused); nested exception is java.net.ConnectException: Conexión rehusada (Connection refused)
+ar.gob.cfp.commons.exceptions.CfpException: Ha ocurrido un error obteniendo  cursos del a institucion 2. Mensaje: Error Inesperado buscando InstitucionI/O error on GET request for "http://localhost:8070/distritales/v1/instituciones/2": Conexión rehusada (Connection refused); nested exception is java.net.ConnectException: Conexión rehusada (Connection refused)
+	at ar.gob.cfp.cursos.services.CursosService.buscarCurso(CursosService.java:53)
+	at ar.gob.cfp.cursos.controllers.CursosController.buscarCurso(CursosController.java:36)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:879)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at ar.gob.cfp.commons.filtros.FiltroMetodosPrivados.doFilter(FiltroMetodosPrivados.java:30)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Cursos 2020-07-03 19:33:36,533 INFO [Thread-69] o.s.s.c.ThreadPoolTaskExecutor Shutting down ExecutorService 'applicationTaskExecutor'
+Cursos 2020-07-03 19:33:36,533 INFO [Thread-69] o.s.o.j.LocalContainerEntityManagerFactoryBean Closing JPA EntityManagerFactory for persistence unit 'default'
+Cursos 2020-07-03 19:33:36,535 INFO [Thread-69] com.zaxxer.hikari.HikariDataSource HikariPool-12 - Shutdown initiated...
+Cursos 2020-07-03 19:33:36,542 INFO [Thread-69] com.zaxxer.hikari.HikariDataSource HikariPool-12 - Shutdown completed.
+Cursos 2020-07-03 19:33:36,718 INFO [restartedMain] ar.gob.cfp.cursos.CursosApplication Starting CursosApplication on roman-Lenovo-G470 with PID 8177 (/home/roman/git/cfp/cursos/target/classes started by roman in /home/roman/git/cfp/cursos)
+Cursos 2020-07-03 19:33:36,718 INFO [restartedMain] ar.gob.cfp.cursos.CursosApplication No active profile set, falling back to default profiles: default
+Cursos 2020-07-03 19:33:37,026 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+Cursos 2020-07-03 19:33:37,040 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 13ms. Found 1 JPA repository interfaces.
+Cursos 2020-07-03 19:33:37,222 INFO [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer Tomcat initialized with port(s): 8073 (http)
+Cursos 2020-07-03 19:33:37,224 INFO [restartedMain] o.a.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-8073"]
+Cursos 2020-07-03 19:33:37,225 INFO [restartedMain] o.a.catalina.core.StandardService Starting service [Tomcat]
+Cursos 2020-07-03 19:33:37,225 INFO [restartedMain] o.a.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.34]
+Cursos 2020-07-03 19:33:37,239 INFO [restartedMain] o.a.c.c.C.[.[localhost].[/cursos] Initializing Spring embedded WebApplicationContext
+Cursos 2020-07-03 19:33:37,239 INFO [restartedMain] o.s.web.context.ContextLoader Root WebApplicationContext: initialization completed in 516 ms
+Cursos 2020-07-03 19:33:37,310 INFO [restartedMain] o.h.jpa.internal.util.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
+Cursos 2020-07-03 19:33:37,319 INFO [restartedMain] com.zaxxer.hikari.HikariDataSource HikariPool-13 - Starting...
+Cursos 2020-07-03 19:33:37,633 INFO [restartedMain] com.zaxxer.hikari.HikariDataSource HikariPool-13 - Start completed.
+Cursos 2020-07-03 19:33:37,634 INFO [restartedMain] org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+Cursos 2020-07-03 19:33:38,182 INFO [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+Cursos 2020-07-03 19:33:38,182 INFO [restartedMain] o.s.o.j.LocalContainerEntityManagerFactoryBean Initialized JPA EntityManagerFactory for persistence unit 'default'
+Cursos 2020-07-03 19:33:38,207 INFO [restartedMain] o.s.b.d.a.OptionalLiveReloadServer LiveReload server is running on port 35729
+Cursos 2020-07-03 19:33:38,304 WARN [restartedMain] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+Cursos 2020-07-03 19:33:38,345 INFO [restartedMain] o.s.s.c.ThreadPoolTaskExecutor Initializing ExecutorService 'applicationTaskExecutor'
+Cursos 2020-07-03 19:33:38,476 INFO [restartedMain] o.a.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["http-nio-8073"]
+Cursos 2020-07-03 19:33:38,487 INFO [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer Tomcat started on port(s): 8073 (http) with context path '/cursos'
+Cursos 2020-07-03 19:33:38,488 INFO [restartedMain] ar.gob.cfp.cursos.CursosApplication Started CursosApplication in 1.816 seconds (JVM running for 3035.808)
+Cursos 2020-07-03 19:33:38,490 INFO [restartedMain] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener Condition evaluation unchanged
+Cursos 2020-07-03 19:33:53,759 INFO [http-nio-8073-exec-2] o.a.c.c.C.[.[localhost].[/cursos] Initializing Spring DispatcherServlet 'dispatcherServlet'
+Cursos 2020-07-03 19:33:53,761 INFO [http-nio-8073-exec-2] o.s.web.servlet.DispatcherServlet Initializing Servlet 'dispatcherServlet'
+Cursos 2020-07-03 19:33:53,768 INFO [http-nio-8073-exec-2] o.s.web.servlet.DispatcherServlet Completed initialization in 7 ms
+Cursos 2020-07-03 19:33:53,785 ERROR [http-nio-8073-exec-2] a.g.c.cursos.services.CursosService Error al conectarse a la API instituciones... 
+org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8070/distritales/v1/instituciones/2": Conexión rehusada (Connection refused); nested exception is java.net.ConnectException: Conexión rehusada (Connection refused)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:748)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:674)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:583)
+	at ar.gob.cfp.cursos.services.CursosService.existeInstitucion(CursosService.java:114)
+	at ar.gob.cfp.cursos.services.CursosService.buscarCurso(CursosService.java:39)
+	at ar.gob.cfp.cursos.controllers.CursosController.buscarCurso(CursosController.java:36)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:879)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at ar.gob.cfp.commons.filtros.FiltroMetodosPrivados.doFilter(FiltroMetodosPrivados.java:30)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: java.net.ConnectException: Conexión rehusada (Connection refused)
+	at java.base/java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:399)
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:242)
+	at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:224)
+	at java.base/java.net.Socket.connect(Socket.java:609)
+	at java.base/java.net.Socket.connect(Socket.java:558)
+	at java.base/sun.net.NetworkClient.doConnect(NetworkClient.java:182)
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:474)
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:569)
+	at java.base/sun.net.www.http.HttpClient.<init>(HttpClient.java:242)
+	at java.base/sun.net.www.http.HttpClient.New(HttpClient.java:341)
+	at java.base/sun.net.www.http.HttpClient.New(HttpClient.java:362)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1248)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1187)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1081)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:1015)
+	at org.springframework.http.client.SimpleBufferingClientHttpRequest.executeInternal(SimpleBufferingClientHttpRequest.java:76)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:53)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:739)
+	... 58 common frames omitted
+Cursos 2020-07-03 19:33:53,786 ERROR [http-nio-8073-exec-2] a.g.c.cursos.services.CursosService ERROR para Nosotros...
+ar.gob.cfp.commons.exceptions.CfpException: Error Inesperado buscando Institucion I/O error on GET request for "http://localhost:8070/distritales/v1/instituciones/2": Conexión rehusada (Connection refused); nested exception is java.net.ConnectException: Conexión rehusada (Connection refused)
+	at ar.gob.cfp.cursos.services.CursosService.existeInstitucion(CursosService.java:128)
+	at ar.gob.cfp.cursos.services.CursosService.buscarCurso(CursosService.java:39)
+	at ar.gob.cfp.cursos.controllers.CursosController.buscarCurso(CursosController.java:36)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:879)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at ar.gob.cfp.commons.filtros.FiltroMetodosPrivados.doFilter(FiltroMetodosPrivados.java:30)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Cursos 2020-07-03 19:33:53,788 ERROR [http-nio-8073-exec-2] ar.gob.cfp.commons.CfpRestController Ha ocurrido un error obteniendo  cursos del a institucion 2. Mensaje: Error Inesperado buscando Institucion I/O error on GET request for "http://localhost:8070/distritales/v1/instituciones/2": Conexión rehusada (Connection refused); nested exception is java.net.ConnectException: Conexión rehusada (Connection refused)
+ar.gob.cfp.commons.exceptions.CfpException: Ha ocurrido un error obteniendo  cursos del a institucion 2. Mensaje: Error Inesperado buscando Institucion I/O error on GET request for "http://localhost:8070/distritales/v1/instituciones/2": Conexión rehusada (Connection refused); nested exception is java.net.ConnectException: Conexión rehusada (Connection refused)
+	at ar.gob.cfp.cursos.services.CursosService.buscarCurso(CursosService.java:53)
+	at ar.gob.cfp.cursos.controllers.CursosController.buscarCurso(CursosController.java:36)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:879)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at ar.gob.cfp.commons.filtros.FiltroMetodosPrivados.doFilter(FiltroMetodosPrivados.java:30)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Cursos 2020-07-03 19:34:03,963 INFO [Thread-75] o.s.s.c.ThreadPoolTaskExecutor Shutting down ExecutorService 'applicationTaskExecutor'
+Cursos 2020-07-03 19:34:03,964 INFO [Thread-75] o.s.o.j.LocalContainerEntityManagerFactoryBean Closing JPA EntityManagerFactory for persistence unit 'default'
+Cursos 2020-07-03 19:34:03,974 INFO [Thread-75] com.zaxxer.hikari.HikariDataSource HikariPool-13 - Shutdown initiated...
+Cursos 2020-07-03 19:34:03,977 INFO [Thread-75] com.zaxxer.hikari.HikariDataSource HikariPool-13 - Shutdown completed.
+Cursos 2020-07-03 19:34:04,234 INFO [restartedMain] ar.gob.cfp.cursos.CursosApplication Starting CursosApplication on roman-Lenovo-G470 with PID 8177 (/home/roman/git/cfp/cursos/target/classes started by roman in /home/roman/git/cfp/cursos)
+Cursos 2020-07-03 19:34:04,235 INFO [restartedMain] ar.gob.cfp.cursos.CursosApplication No active profile set, falling back to default profiles: default
+Cursos 2020-07-03 19:34:04,580 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+Cursos 2020-07-03 19:34:04,596 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 16ms. Found 1 JPA repository interfaces.
+Cursos 2020-07-03 19:34:04,788 INFO [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer Tomcat initialized with port(s): 8073 (http)
+Cursos 2020-07-03 19:34:04,789 INFO [restartedMain] o.a.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-8073"]
+Cursos 2020-07-03 19:34:04,789 INFO [restartedMain] o.a.catalina.core.StandardService Starting service [Tomcat]
+Cursos 2020-07-03 19:34:04,789 INFO [restartedMain] o.a.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.34]
+Cursos 2020-07-03 19:34:04,803 INFO [restartedMain] o.a.c.c.C.[.[localhost].[/cursos] Initializing Spring embedded WebApplicationContext
+Cursos 2020-07-03 19:34:04,803 INFO [restartedMain] o.s.web.context.ContextLoader Root WebApplicationContext: initialization completed in 565 ms
+Cursos 2020-07-03 19:34:04,873 INFO [restartedMain] o.h.jpa.internal.util.LogHelper HHH000204: Processing PersistenceUnitInfo [name: default]
+Cursos 2020-07-03 19:34:04,880 INFO [restartedMain] com.zaxxer.hikari.HikariDataSource HikariPool-14 - Starting...
+Cursos 2020-07-03 19:34:05,195 INFO [restartedMain] com.zaxxer.hikari.HikariDataSource HikariPool-14 - Start completed.
+Cursos 2020-07-03 19:34:05,195 INFO [restartedMain] org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+Cursos 2020-07-03 19:34:05,767 INFO [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+Cursos 2020-07-03 19:34:05,767 INFO [restartedMain] o.s.o.j.LocalContainerEntityManagerFactoryBean Initialized JPA EntityManagerFactory for persistence unit 'default'
+Cursos 2020-07-03 19:34:05,788 INFO [restartedMain] o.s.b.d.a.OptionalLiveReloadServer LiveReload server is running on port 35729
+Cursos 2020-07-03 19:34:05,882 WARN [restartedMain] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+Cursos 2020-07-03 19:34:05,925 INFO [restartedMain] o.s.s.c.ThreadPoolTaskExecutor Initializing ExecutorService 'applicationTaskExecutor'
+Cursos 2020-07-03 19:34:06,061 INFO [restartedMain] o.a.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["http-nio-8073"]
+Cursos 2020-07-03 19:34:06,065 INFO [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer Tomcat started on port(s): 8073 (http) with context path '/cursos'
+Cursos 2020-07-03 19:34:06,070 INFO [restartedMain] ar.gob.cfp.cursos.CursosApplication Started CursosApplication in 1.89 seconds (JVM running for 3063.39)
+Cursos 2020-07-03 19:34:06,072 INFO [restartedMain] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener Condition evaluation unchanged
+Cursos 2020-07-03 19:35:28,295 INFO [RMI TCP Connection(4)-127.0.0.1] o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin Application shutdown requested.
+Cursos 2020-07-03 19:35:28,301 INFO [RMI TCP Connection(4)-127.0.0.1] o.s.s.c.ThreadPoolTaskExecutor Shutting down ExecutorService 'applicationTaskExecutor'
+Cursos 2020-07-03 19:35:28,301 INFO [RMI TCP Connection(4)-127.0.0.1] o.s.o.j.LocalContainerEntityManagerFactoryBean Closing JPA EntityManagerFactory for persistence unit 'default'
+Cursos 2020-07-03 19:35:28,302 INFO [RMI TCP Connection(4)-127.0.0.1] com.zaxxer.hikari.HikariDataSource HikariPool-14 - Shutdown initiated...
+Cursos 2020-07-03 19:35:28,308 INFO [RMI TCP Connection(4)-127.0.0.1] com.zaxxer.hikari.HikariDataSource HikariPool-14 - Shutdown completed.
