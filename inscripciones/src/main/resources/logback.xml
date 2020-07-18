@@ -8,7 +8,7 @@
 		</layout>
 	</appender>
 	<appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
-		<file>D:/Users/jeyler/Trabajo/CFP/SpringBoot/logs/microservicios.log</file>
+		<file>D:/CursoProgramacion/microservicios.log</file>
 		<rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
             <fileNamePattern>.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
             <!-- each archived file, size max 10MB -->
@@ -19,7 +19,7 @@
             <maxHistory>60</maxHistory>
         </rollingPolicy>
         <encoder>
-            <pattern>autorizaciones %d %p [%t] %logger{36} %m%n</pattern>
+            <pattern>inscripciones %d %p [%t] %logger{36} %m%n</pattern>
         </encoder>
 	</appender>
 	

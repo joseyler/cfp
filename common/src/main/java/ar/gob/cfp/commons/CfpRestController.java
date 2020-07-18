@@ -47,6 +47,7 @@ public class CfpRestController {
             return new ResponseEntity<Object>(ex.getMessage(),HttpStatus.CONFLICT);
         }
         LOGGER.error(ex.getMessage(),ex);
+
         return new ResponseEntity<Object>(ex.getMessage(),HttpStatus.INTERNAL_SERVER_ERROR);
     }
 

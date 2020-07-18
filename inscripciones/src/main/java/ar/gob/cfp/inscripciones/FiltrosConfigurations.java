@@ -17,5 +17,4 @@ public class FiltrosConfigurations {
         return filterRegistrationBean;
     }
 	
-
 }
