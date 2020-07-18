@@ -56,6 +56,7 @@ public class InscripcionesController extends CfpRestController {
     // http://localhost:8071/inscripciones/v1/inscripciones
     @GetMapping(value = "", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Object> getAllInscripciones() {
+
         try {
             List<Inscripcion> respuesta = inscripcionesService.getAllInscripciones();
             return new ResponseEntity<Object>(respuesta, HttpStatus.OK);
@@ -67,6 +68,7 @@ public class InscripcionesController extends CfpRestController {
     // http://localhost:8071/inscripciones/v1/inscripciones/8
     @GetMapping(value = "/{idInscripcion}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Object> getInscripcionById(@PathVariable("idInscripcion") Integer idInscripto) {
+
         try {
             Inscripcion respuesta = inscripcionesService.getInscripcionById(idInscripto);
             return new ResponseEntity<Object>(respuesta, HttpStatus.OK);

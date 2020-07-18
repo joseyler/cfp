@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import ar.gob.cfp.commons.CfpRestController;
 import ar.gob.cfp.commons.exceptions.CfpException;
 import ar.gob.cfp.commons.exceptions.RequerimientoInvalidoCfpException;
@@ -27,6 +26,7 @@ public class ProfesoresController extends CfpRestController {
 
     @Autowired
     ProfesoresServices profesoresService;
+
 
     // http://localhost:8072/personal/v1/profesores
     @GetMapping(value = "", produces = MediaType.APPLICATION_JSON_VALUE)
